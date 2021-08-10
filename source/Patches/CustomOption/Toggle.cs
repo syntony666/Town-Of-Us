@@ -1,3 +1,5 @@
+using TownOfUs.Patches.Language;
+
 namespace TownOfUs.CustomOption
 {
     public class CustomToggleOption : CustomOption
@@ -6,7 +8,7 @@ namespace TownOfUs.CustomOption
             CustomOptionType.Toggle,
             value)
         {
-            Format = val => (bool) val ? "On" : "Off";
+            Format = val => (bool) val ? ChineseTraditional.On.Value : ChineseTraditional.Off.Value;
         }
 
         protected internal bool Get()

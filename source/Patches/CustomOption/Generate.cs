@@ -1,4 +1,5 @@
 using System;
+using TownOfUs.Patches.Language;
 
 namespace TownOfUs.CustomOption
 {
@@ -165,7 +166,9 @@ namespace TownOfUs.CustomOption
         public static CustomToggleOption AssassinCrewmateGuess;
         public static CustomToggleOption AssassinMultiKill;
         public static Func<object, string> PercentFormat { get; } = value => $"{value:0}%";
-        private static Func<object, string> CooldownFormat { get; } = value => $"{value:0.0#}s";
+        private static Func<object, string> CooldownFormat { get; } = value => $"{value:0.0#}" + ChineseTraditional.Second.Value;
+
+        private static string wordFormat(string color, string str) => "<color=" + color + ">" + str +"</color>";
 
 
         public static void GenerateAll()
@@ -176,278 +179,286 @@ namespace TownOfUs.CustomOption
             Patches.ImportButton = new Import(num++);
 
 
-            CrewmateRoles = new CustomHeaderOption(num++, "Crewmate Roles");
-            MayorOn = new CustomNumberOption(true, num++, "<color=#704FA8FF>Mayor</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            LoversOn = new CustomNumberOption(true, num++, "<color=#FF66CCFF>Lovers</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            SheriffOn = new CustomNumberOption(true, num++, "<color=#FFFF00FF>Sheriff</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            EngineerOn = new CustomNumberOption(true, num++, "<color=#FFA60AFF>Engineer</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            SwapperOn = new CustomNumberOption(true, num++, "<color=#66E666FF>Swapper</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            InvestigatorOn = new CustomNumberOption(true, num++, "<color=#00B3B3FF>Investigator</color>", 0f, 0f, 100f,
-                10f, PercentFormat);
-            TimeLordOn = new CustomNumberOption(true, num++, "<color=#0000FFFF>Time Lord</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            MedicOn = new CustomNumberOption(true, num++, "<color=#006600FF>Medic</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            SeerOn = new CustomNumberOption(true, num++, "<color=#FFCC80FF>Seer</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            SpyOn = new CustomNumberOption(true, num++, "<color=#CCA3CCFF>Spy</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            SnitchOn = new CustomNumberOption(true, num++, "<color=#D4AF37FF>Snitch</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            AltruistOn = new CustomNumberOption(true, num++, "<color=#660000FF>Altruist</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
+            CrewmateRoles = new CustomHeaderOption(num++, ChineseTraditional.CrewmateRoles.Value);
+            MayorOn =
+                new CustomNumberOption(true, num++, wordFormat("#704FA8FF", ChineseTraditional.Mayor.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            LoversOn =
+                new CustomNumberOption(true, num++, wordFormat("#FF66CCFF", ChineseTraditional.Lovers.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            SheriffOn =
+                new CustomNumberOption(true, num++, wordFormat("#FFFF00FF", ChineseTraditional.Sheriff.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            EngineerOn =
+                new CustomNumberOption(true, num++, wordFormat("#FFA60AFF", ChineseTraditional.Engineer.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            SwapperOn =
+                new CustomNumberOption(true, num++, wordFormat("#66E666FF", ChineseTraditional.Swapper.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            InvestigatorOn =
+                new CustomNumberOption(true, num++, wordFormat("#00B3B3FF", ChineseTraditional.Investigator.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            TimeLordOn =
+                new CustomNumberOption(true, num++, wordFormat("#0000FFFF", ChineseTraditional.TimeLord.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            MedicOn =
+                new CustomNumberOption(true, num++, wordFormat("#006600FF", ChineseTraditional.Medic.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            SeerOn =
+                new CustomNumberOption(true, num++, wordFormat("#FFCC80FF", ChineseTraditional.Seer.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            SpyOn =
+                new CustomNumberOption(true, num++, wordFormat("#CCA3CCFF", ChineseTraditional.Spy.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            SnitchOn =
+                new CustomNumberOption(true, num++, wordFormat("#D4AF37FF", ChineseTraditional.Snitch.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            AltruistOn =
+                new CustomNumberOption(true, num++, wordFormat("#660000FF", ChineseTraditional.Altruist.Value), 0f, 0f, 100f, 10f, PercentFormat);
 
+            NeutralRoles = new CustomHeaderOption(num++, ChineseTraditional.NeutralRoles.Value);
+            JesterOn =
+                new CustomNumberOption(true, num++, wordFormat("#FFBFCCFF", ChineseTraditional.Jester.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            ShifterOn =
+                new CustomNumberOption(true, num++, wordFormat("#999999FF", ChineseTraditional.Shifter.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            GlitchOn =
+                new CustomNumberOption(true, num++, wordFormat("#00FF00FF", ChineseTraditional.TheGlitch.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            ExecutionerOn =
+                new CustomNumberOption(true, num++, wordFormat("#8C4005FF", ChineseTraditional.Executioner.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            ArsonistOn =
+                new CustomNumberOption(true, num++, wordFormat("#FF4D00FF", ChineseTraditional.Arsonist.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            PhantomOn =
+                new CustomNumberOption(true, num++, wordFormat("#662962FF", ChineseTraditional.Phantom.Value), 0f, 0f, 100f, 10f, PercentFormat);
 
-            NeutralRoles = new CustomHeaderOption(num++, "Neutral Roles");
-            JesterOn = new CustomNumberOption(true, num++, "<color=#FFBFCCFF>Jester</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            ShifterOn = new CustomNumberOption(true, num++, "<color=#999999FF>Shifter</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            GlitchOn = new CustomNumberOption(true, num++, "<color=#00FF00FF>The Glitch</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            ExecutionerOn = new CustomNumberOption(true, num++, "<color=#8C4005FF>Executioner</color>", 0f, 0f, 100f,
-                10f, PercentFormat);
-            ArsonistOn = new CustomNumberOption(true, num++, "<color=#FF4D00FF>Arsonist</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            PhantomOn = new CustomNumberOption(true, num++, "<color=#662962>Phantom</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
+            ImpostorRoles =
+                new CustomHeaderOption(num++, ChineseTraditional.ImpostorRoles.Value);
+            AssassinOn =
+                new CustomNumberOption(true, num++, wordFormat("#FF0000FF", ChineseTraditional.Assassin.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            JanitorOn =
+                new CustomNumberOption(true, num++, wordFormat("#FF0000FF", ChineseTraditional.Janitor.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            MorphlingOn =
+                new CustomNumberOption(true, num++, wordFormat("#FF0000FF", ChineseTraditional.Morphling.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            CamouflagerOn =
+                new CustomNumberOption(true, num++, wordFormat("#FF0000FF", ChineseTraditional.Camouflager.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            MinerOn =
+                new CustomNumberOption(true, num++, wordFormat("#FF0000FF", ChineseTraditional.Miner.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            SwooperOn =
+                new CustomNumberOption(true, num++, wordFormat("#FF0000FF", ChineseTraditional.Swooper.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            UndertakerOn =
+                new CustomNumberOption(true, num++, wordFormat("#FF0000FF", ChineseTraditional.Undertaker.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            UnderdogOn =
+                new CustomNumberOption(true, num++, wordFormat("#FF0000FF", ChineseTraditional.Underdog.Value), 0f, 0f, 100f, 10f, PercentFormat);
 
-            ImpostorRoles = new CustomHeaderOption(num++, "Impostor Roles");
-            AssassinOn = new CustomNumberOption(true, num++, "<color=#FF0000FF>Assassin</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            JanitorOn = new CustomNumberOption(true, num++, "<color=#FF0000FF>Janitor</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            MorphlingOn = new CustomNumberOption(true, num++, "<color=#FF0000FF>Morphling</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            CamouflagerOn = new CustomNumberOption(true, num++, "<color=#FF0000FF>Camouflager</color>", 0f, 0f, 100f,
-                10f, PercentFormat);
-            MinerOn = new CustomNumberOption(true, num++, "<color=#FF0000FF>Miner</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            SwooperOn = new CustomNumberOption(true, num++, "<color=#FF0000FF>Swooper</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            UndertakerOn = new CustomNumberOption(true, num++, "<color=#FF0000FF>Undertaker</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            
-            UnderdogOn = new CustomNumberOption(true, num++, "<color=#FF0000FF>Underdog</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-
-            Modifiers = new CustomHeaderOption(num++, "Modifiers");
-            TorchOn = new CustomNumberOption(true, num++, "<color=#FFFF99FF>Torch</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
+            Modifiers = new CustomHeaderOption(num++, ChineseTraditional.Modifiers.Value);
+            TorchOn =
+                new CustomNumberOption(true, num++, wordFormat("#FFFF99FF", ChineseTraditional.Torch.Value), 0f, 0f, 100f, 10f, PercentFormat);
             DiseasedOn =
-                new CustomNumberOption(true, num++, "<color=#808080FF>Diseased</color>", 0f, 0f, 100f, 10f,
-                    PercentFormat);
-            FlashOn = new CustomNumberOption(true, num++, "<color=#FF8080FF>Flash</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            TiebreakerOn = new CustomNumberOption(true, num++, "<color=#99E699FF>Tiebreaker</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            DrunkOn = new CustomNumberOption(true, num++, "<color=#758000FF>Drunk</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
-            BigBoiOn = new CustomNumberOption(true, num++, "<color=#FF8080FF>Giant</color>", 0f, 0f, 100f, 10f,
-                PercentFormat);
+                new CustomNumberOption(true, num++, wordFormat("#808080FF", ChineseTraditional.Diseased.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            FlashOn =
+                new CustomNumberOption(true, num++, wordFormat("#FF8080FF", ChineseTraditional.Flash.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            TiebreakerOn =
+                new CustomNumberOption(true, num++, wordFormat("#99E699FF", ChineseTraditional.Tiebreaker.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            DrunkOn =
+                new CustomNumberOption(true, num++, wordFormat("#758000FF", ChineseTraditional.Drunk.Value), 0f, 0f, 100f, 10f, PercentFormat);
+            BigBoiOn =
+                new CustomNumberOption(true, num++, wordFormat("#FF8080FF", ChineseTraditional.Giant.Value), 0f, 0f, 100f, 10f, PercentFormat);
             ButtonBarryOn =
-                new CustomNumberOption(true, num++, "<color=#E600FFFF>Button Barry</color>", 0f, 0f, 100f, 10f,
-                    PercentFormat);
+                new CustomNumberOption(true, num++, wordFormat("#E600FFFF", ChineseTraditional.ButtonBarry.Value), 0f, 0f, 100f, 10f, PercentFormat);
 
 
             CustomGameSettings =
-                new CustomHeaderOption(num++, "Custom Game Settings");
-            ColourblindComms = new CustomToggleOption(num++, "Camouflaged Comms", false);
-            MeetingColourblind = new CustomToggleOption(num++, "Camouflaged Meetings", false);
-            ImpostorSeeRoles = new CustomToggleOption(num++, "Impostors can see the roles of their team", false);
-
+                new CustomHeaderOption(num++, ChineseTraditional.CustomGameSettings.Value);
+            ColourblindComms = 
+                new CustomToggleOption(num++, ChineseTraditional.ColourblindComms.Value, false);
+            MeetingColourblind = 
+                new CustomToggleOption(num++, ChineseTraditional.MeetingColourblind.Value, false);
+            ImpostorSeeRoles = 
+                new CustomToggleOption(num++, ChineseTraditional.ImpostorSeeRoles.Value, false);
             DeadSeeRoles =
-                new CustomToggleOption(num++, "Dead can see everyone's roles", false);
-
+                new CustomToggleOption(num++, ChineseTraditional.DeadSeeRoles.Value, false);
             MaxImpostorRoles =
-                new CustomNumberOption(num++, "Max Impostor Roles", 1f, 1f, 3f, 1f);
+                new CustomNumberOption(num++, ChineseTraditional.MaxImpostorRoles.Value, 1f, 1f, 3f, 1f);
             MaxNeutralRoles =
-                new CustomNumberOption(num++, "Max Neutral Roles", 1f, 1f, 5f, 1f);
-            RoleUnderName = new CustomToggleOption(num++, "Role Appears Under Name");
-            VanillaGame = new CustomNumberOption(num++, "Probability of a completely vanilla game", 0f, 0f, 100f, 5f,
-                PercentFormat);
+                new CustomNumberOption(num++, ChineseTraditional.MaxNeutralRoles.Value, 1f, 1f, 5f, 1f);
+            RoleUnderName = 
+                new CustomToggleOption(num++, ChineseTraditional.RoleUnderName.Value);
+            VanillaGame = 
+                new CustomNumberOption(num++, ChineseTraditional.VanillaGame.Value, 0f, 0f, 100f, 5f, PercentFormat);
 
             Mayor =
-                new CustomHeaderOption(num++, "<color=#704FA8FF>Mayor</color>");
-
+                new CustomHeaderOption(num++, wordFormat("#704FA8FF", ChineseTraditional.Mayor.Value));
             MayorVoteBank =
-                new CustomNumberOption(num++, "Initial Mayor Vote Bank", 1, 1, 5, 1);
-
+                new CustomNumberOption(num++, ChineseTraditional.MayorVoteBank.Value, 1, 1, 5, 1);
             MayorAnonymous =
-                new CustomToggleOption(num++, "Mayor Votes Show Anonymous", false);
+                new CustomToggleOption(num++, ChineseTraditional.MayorAnonymous.Value, false);
 
             Lovers =
-                new CustomHeaderOption(num++, "<color=#FF66CCFF>Lovers</color>");
-            BothLoversDie = new CustomToggleOption(num++, "Both Lovers Die");
+                new CustomHeaderOption(num++, wordFormat("#FF66CCFF", ChineseTraditional.Lovers.Value));
+            BothLoversDie = 
+                new CustomToggleOption(num++, ChineseTraditional.BothLoversDie.Value);
 
             Sheriff =
-                new CustomHeaderOption(num++, "<color=#FFFF00FF>Sheriff</color>");
-            ShowSheriff = new CustomToggleOption(num++, "Show Sheriff", false);
-
+                new CustomHeaderOption(num++, wordFormat("#FFFF00FF",ChineseTraditional.Sheriff.Value));
+            ShowSheriff = 
+                new CustomToggleOption(num++, ChineseTraditional.ShowSheriff.Value, false);
             SheriffKillOther =
-                new CustomToggleOption(num++, "Sheriff Miskill Kills Crewmate", false);
-
+                new CustomToggleOption(num++, ChineseTraditional.SheriffKillOther.Value, false);
             SheriffKillsJester =
-                new CustomToggleOption(num++, "Sheriff Kills Jester", false);
+                new CustomToggleOption(num++, ChineseTraditional.SheriffKillsJester.Value, false);
             SheriffKillsGlitch =
-                new CustomToggleOption(num++, "Sheriff Kills The Glitch", false);
+                new CustomToggleOption(num++, ChineseTraditional.SheriffKillsGlitch.Value, false);
             SheriffKillsArsonist =
-                new CustomToggleOption(num++, "Sheriff Kills Arsonist", false);
-
+                new CustomToggleOption(num++, ChineseTraditional.SheriffKillsArsonist.Value, false);
             SheriffKillCd =
-                new CustomNumberOption(num++, "Sheriff Kill Cooldown", 25f, 10f, 40f, 2.5f, CooldownFormat);
-            SheriffBodyReport = new CustomToggleOption(num++, "Sheriff can report who they've killed");
-
+                new CustomNumberOption(num++, ChineseTraditional.SheriffKillCd.Value, 25f, 10f, 40f, 2.5f, CooldownFormat);
+            SheriffBodyReport = 
+                new CustomToggleOption(num++, ChineseTraditional.SheriffBodyReport.Value);
 
             Engineer =
-                new CustomHeaderOption(num++, "<color=#FFA60AFF>Engineer</color>");
+                new CustomHeaderOption(num++, wordFormat("#FFA60AFF",ChineseTraditional.Engineer.Value));
             EngineerPer =
-                new CustomStringOption(num++, "Engineer Fix Per", new[] {"Round", "Game"});
-
+                new CustomStringOption(num++, ChineseTraditional.EngineerPer.Value, 
+                            new[]{ChineseTraditional.PerRound.Value, ChineseTraditional.PerGame.Value});
 
             Investigator =
-                new CustomHeaderOption(num++, "<color=#00B3B3FF>Investigator</color>");
-            FootprintSize = new CustomNumberOption(num++, "Footprint Size", 4f, 1f, 10f, 1f);
-
+                new CustomHeaderOption(num++, wordFormat("#00B3B3FF", ChineseTraditional.Investigator.Value));
+            FootprintSize = 
+                new CustomNumberOption(num++, ChineseTraditional.FootprintSize.Value, 4f, 1f, 10f, 1f);
             FootprintInterval =
-                new CustomNumberOption(num++, "Footprint Interval", 1f, 0.25f, 5f, 0.25f, CooldownFormat);
-            FootprintDuration = new CustomNumberOption(num++, "Footprint Duration", 10f, 1f, 10f, 0.5f, CooldownFormat);
-            AnonymousFootPrint = new CustomToggleOption(num++, "Anonymous Footprint", false);
-            VentFootprintVisible = new CustomToggleOption(num++, "Footprint Vent Visible", false);
+                new CustomNumberOption(num++, ChineseTraditional.FootprintInterval.Value, 1f, 0.25f, 5f, 0.25f, CooldownFormat);
+            FootprintDuration = 
+                new CustomNumberOption(num++, ChineseTraditional.FootprintDuration.Value, 10f, 1f, 10f, 0.5f, CooldownFormat);
+            AnonymousFootPrint = 
+                new CustomToggleOption(num++, ChineseTraditional.AnonymousFootPrint.Value, false);
+            VentFootprintVisible = 
+                new CustomToggleOption(num++, ChineseTraditional.VentFootprintVisible.Value, false);
 
             TimeLord =
-                new CustomHeaderOption(num++, "<color=#0000FFFF>Time Lord</color>");
-            RewindRevive = new CustomToggleOption(num++, "Revive During Rewind", false);
-            RewindDuration = new CustomNumberOption(num++, "Rewind Duration", 3f, 3f, 15f, 0.5f, CooldownFormat);
-            RewindCooldown = new CustomNumberOption(num++, "Rewind Cooldown", 25f, 10f, 40f, 2.5f, CooldownFormat);
-
+                new CustomHeaderOption(num++, wordFormat("#0000FFFF", ChineseTraditional.TimeLord.Value));
+            RewindRevive = 
+                new CustomToggleOption(num++, ChineseTraditional.RewindRevive.Value, false);
+            RewindDuration = 
+                new CustomNumberOption(num++, ChineseTraditional.RewindDuration.Value, 3f, 3f, 15f, 0.5f, CooldownFormat);
+            RewindCooldown = 
+                new CustomNumberOption(num++, ChineseTraditional.RewindCooldown.Value, 25f, 10f, 40f, 2.5f, CooldownFormat);
             TimeLordVitals =
-                new CustomToggleOption(num++, "Time Lord can use Vitals", false);
+                new CustomToggleOption(num++, ChineseTraditional.TimeLordVitals.Value, false);
 
             Medic =
-                new CustomHeaderOption(num++, "<color=#006600FF>Medic</color>");
-
+                new CustomHeaderOption(num++, wordFormat("#006600FF", ChineseTraditional.Medic.Value));
             ShowShielded =
-                new CustomStringOption(num++, "Show Shielded Player",
-                    new[] {"Self", "Medic", "Self+Medic", "Everyone"});
-
-            MedicReportSwitch = new CustomToggleOption(num++, "Show Medic Reports");
-
+                new CustomStringOption(num++, ChineseTraditional.ShowShielded.Value,
+                    new[] { ChineseTraditional.Medic.Value, ChineseTraditional.Shielded.Value,
+                            ChineseTraditional.ShieldedAndMedic.Value, ChineseTraditional.Nobody.Value});
+            MedicReportSwitch = 
+                new CustomToggleOption(num++, ChineseTraditional.MedicReportSwitch.Value);
             MedicReportNameDuration =
-                new CustomNumberOption(num++, "Time Where Medic Reports Will Have Name", 0, 0, 60, 2.5f,
-                    CooldownFormat);
-
+                new CustomNumberOption(num++, ChineseTraditional.MedicReportNameDuration.Value, 0, 0, 60, 2.5f, CooldownFormat);
             MedicReportColorDuration =
-                new CustomNumberOption(num++, "Time Where Medic Reports Will Have Color Type", 15, 0, 120, 2.5f,
-                    CooldownFormat);
-
+                new CustomNumberOption(num++, ChineseTraditional.MedicReportColorDuration.Value, 15, 0, 120, 2.5f, CooldownFormat);
             WhoGetsNotification =
-                new CustomStringOption(num++, "Who gets murder attempt indicator",
-                    new[] {"Medic", "Shielded", "Everyone", "Nobody"});
-
-            ShieldBreaks = new CustomToggleOption(num++, "Shield breaks on murder attempt", false);
+                new CustomStringOption(num++, ChineseTraditional.WhoGetsNotification.Value,
+                    new[] { ChineseTraditional.Medic.Value, ChineseTraditional.Shielded.Value,
+                            ChineseTraditional.Everyone.Value, ChineseTraditional.Nobody.Value});
+            ShieldBreaks = new CustomToggleOption(num++, ChineseTraditional.ShieldBreaks.Value, false);
 
             Seer =
-                new CustomHeaderOption(num++, "<color=#FFCC80FF>Seer</color>");
-
+                new CustomHeaderOption(num++, wordFormat("#FFCC80FF", ChineseTraditional.Seer.Value));
             SeerCooldown =
-                new CustomNumberOption(num++, "Seer Cooldown", 25f, 10f, 100f, 2.5f, CooldownFormat);
-
+                new CustomNumberOption(num++, ChineseTraditional.SeerCooldown.Value, 25f, 10f, 100f, 2.5f, CooldownFormat);
             SeerInfo =
-                new CustomStringOption(num++, "Info that Seer sees", new[] {"Role", "Team"});
-
-
+                new CustomStringOption(num++, ChineseTraditional.SeerInfo.Value, 
+                    new[] {ChineseTraditional.SeerInfoOption0.Value, ChineseTraditional.SeerInfoOption1.Value});
             SeeReveal =
-                new CustomStringOption(num++, "Who Sees That They Are Revealed",
-                    new[] {"Crew", "Imps+Neut", "All", "Nobody"});
+                new CustomStringOption(num++, ChineseTraditional.SeeReveal.Value,
+                    new[] { ChineseTraditional.CrewmateRoles.Value, ChineseTraditional.ImpAndNeu.Value,
+                            ChineseTraditional.Everyone.Value, ChineseTraditional.Nobody.Value});
             NeutralRed =
-                new CustomToggleOption(num++, "Neutrals show up as Impostors", false);
+                new CustomToggleOption(num++, ChineseTraditional.NeutralRed.Value, false);
 
-            Snitch = new CustomHeaderOption(num++, "<color=#D4AF37FF>Snitch</color>");
+            Snitch = 
+                new CustomHeaderOption(num++, wordFormat("#D4AF37FF", ChineseTraditional.Snitch.Value));
             SnitchOnLaunch =
-                new CustomToggleOption(num++, "Snitch knows who they are on Game Start", false);
-            SnitchSeesNeutrals = new CustomToggleOption(num++, "Snitch sees neutral roles", false);
+                new CustomToggleOption(num++, ChineseTraditional.SnitchOnLaunch.Value, false);
+            SnitchSeesNeutrals = 
+                new CustomToggleOption(num++, ChineseTraditional.SnitchSeesNeutrals.Value, false);
 
-            Altruist = new CustomHeaderOption(num++, "<color=#660000FF>Altruist</color>");
+            Altruist = 
+                new CustomHeaderOption(num++, wordFormat("#660000FF", ChineseTraditional.Altruist.Value));
             ReviveDuration =
-                new CustomNumberOption(num++, "Altruist Revive Duration", 10, 1, 30, 1f, CooldownFormat);
+                new CustomNumberOption(num++, ChineseTraditional.ReviveDuration.Value, 10, 1, 30, 1f, CooldownFormat);
             AltruistTargetBody =
-                new CustomToggleOption(num++, "Target's body disappears on beginning of revive", false);
+                new CustomToggleOption(num++, ChineseTraditional.AltruistTargetBody.Value, false);
 
             Shifter =
-                new CustomHeaderOption(num++, "<color=#999999FF>Shifter</color>");
+                new CustomHeaderOption(num++, wordFormat("#999999FF", ChineseTraditional.Shifter.Value));
             ShifterCd =
-                new CustomNumberOption(num++, "Shifter Cooldown", 30f, 10f, 60f, 2.5f, CooldownFormat);
-            WhoShifts = new CustomStringOption(num++,
-                "Who gets the Shifter role on Shift", new[] {"NoImps", "RegCrew", "Nobody"});
-
+                new CustomNumberOption(num++, ChineseTraditional.ShifterCd.Value, 30f, 10f, 60f, 2.5f, CooldownFormat);
+            WhoShifts = 
+                new CustomStringOption(num++, ChineseTraditional.WhoShifts.Value, 
+                    new[] { ChineseTraditional.NoImps.Value, ChineseTraditional.RegCrew.Value,
+                            ChineseTraditional.Nobody.Value});
 
             TheGlitch =
-                new CustomHeaderOption(num++, "<color=#00FF00FF>The Glitch</color>");
-            MimicCooldownOption = new CustomNumberOption(num++, "Mimic Cooldown", 30, 10, 120, 2.5f, CooldownFormat);
-            MimicDurationOption = new CustomNumberOption(num++, "Mimic Duration", 10, 1, 30, 1f, CooldownFormat);
-            HackCooldownOption = new CustomNumberOption(num++, "Hack Cooldown", 30, 10, 120, 2.5f, CooldownFormat);
-            HackDurationOption = new CustomNumberOption(num++, "Hack Duration", 10, 1, 30, 1f, CooldownFormat);
+                new CustomHeaderOption(num++, wordFormat("#00FF00FF", ChineseTraditional.TheGlitch.Value));
+            MimicCooldownOption = 
+                new CustomNumberOption(num++, ChineseTraditional.MimicCooldownOption.Value, 30, 10, 120, 2.5f, CooldownFormat);
+            MimicDurationOption = 
+                new CustomNumberOption(num++, ChineseTraditional.MimicDurationOption.Value, 10, 1, 30, 1f, CooldownFormat);
+            HackCooldownOption = 
+                new CustomNumberOption(num++, ChineseTraditional.HackCooldownOption.Value, 30, 10, 120, 2.5f, CooldownFormat);
+            HackDurationOption = 
+                new CustomNumberOption(num++, ChineseTraditional.HackDurationOption.Value, 10, 1, 30, 1f, CooldownFormat);
             GlitchKillCooldownOption =
-                new CustomNumberOption(num++, "Glitch Kill Cooldown", 30, 10, 120, 2.5f, CooldownFormat);
+                new CustomNumberOption(num++, ChineseTraditional.GlitchKillCooldownOption.Value, 30, 10, 120, 2.5f, CooldownFormat);
             InitialGlitchKillCooldownOption =
-                new CustomNumberOption(num++, "Initial Glitch Kill Cooldown", 10, 10, 120, 2.5f, CooldownFormat);
+                new CustomNumberOption(num++, ChineseTraditional.InitialGlitchKillCooldownOption.Value, 10, 10, 120, 2.5f, CooldownFormat);
             GlitchHackDistanceOption =
-                new CustomStringOption(num++, "Glitch Hack Distance", new[] {"Short", "Normal", "Long"});
+                new CustomStringOption(num++, ChineseTraditional.GlitchHackDistanceOption.Value, new[] {"Short", "Normal", "Long"});
 
             Executioner =
-                new CustomHeaderOption(num++, "<color=#8C4005FF>Executioner</color>");
-            OnTargetDead = new CustomStringOption(num++, "Executioner becomes on Target Dead",
-                new[] {"Crew", "Jester"});
+                new CustomHeaderOption(num++, wordFormat("#8C4005FF", ChineseTraditional.Executioner.Value));
+            OnTargetDead = 
+                new CustomStringOption(num++, ChineseTraditional.OnTargetDead.Value,
+                    new[] {ChineseTraditional.RegCrew.Value, ChineseTraditional.Jester.Value});
 
-            Arsonist = new CustomHeaderOption(num++, "<color=#FF4D00FF>Arsonist</color>");
-
+            Arsonist = 
+                new CustomHeaderOption(num++, wordFormat("#FF4D00FF", ChineseTraditional.Arsonist.Value));
             DouseCooldown =
-                new CustomNumberOption(num++, "Douse Cooldown", 25, 10, 40, 2.5f, CooldownFormat);
-
-            ArsonistGameEnd = new CustomToggleOption(num++, "Game keeps going so long as Arsonist is alive", false);
-
+                new CustomNumberOption(num++, ChineseTraditional.DouseCooldown.Value, 25, 10, 40, 2.5f, CooldownFormat);
+            ArsonistGameEnd = 
+                new CustomToggleOption(num++, ChineseTraditional.ArsonistGameEnd.Value, false);
 
             Morphling =
-                new CustomHeaderOption(num++, "<color=#FF0000FF>Morphling</color>");
+                new CustomHeaderOption(num++, wordFormat("#FF0000FF", ChineseTraditional.Morphling.Value));
             MorphlingCooldown =
-                new CustomNumberOption(num++, "Morphling Cooldown", 25, 10, 40, 2.5f, CooldownFormat);
+                new CustomNumberOption(num++, ChineseTraditional.MorphlingCooldown.Value, 25, 10, 40, 2.5f, CooldownFormat);
             MorphlingDuration =
-                new CustomNumberOption(num++, "Morphling Duration", 10, 5, 15, 1f, CooldownFormat);
+                new CustomNumberOption(num++, ChineseTraditional.MorphlingDuration.Value, 10, 5, 15, 1f, CooldownFormat);
 
             Camouflager =
-                new CustomHeaderOption(num++, "<color=#FF0000FF>Camouflager</color>");
+                new CustomHeaderOption(num++, wordFormat("#FF0000FF", ChineseTraditional.Camouflager.Value));
             CamouflagerCooldown =
-                new CustomNumberOption(num++, "Camouflager Cooldown", 25, 10, 40, 2.5f, CooldownFormat);
+                new CustomNumberOption(num++, ChineseTraditional.CamouflagerCooldown.Value, 25, 10, 40, 2.5f, CooldownFormat);
             CamouflagerDuration =
-                new CustomNumberOption(num++, "Camouflager Duration", 10, 5, 15, 1f, CooldownFormat);
+                new CustomNumberOption(num++, ChineseTraditional.CamouflagerDuration.Value, 10, 5, 15, 1f, CooldownFormat);
 
-
-            Miner = new CustomHeaderOption(num++, "<color=#FF0000FF>Miner</color>");
-
+            Miner = 
+                new CustomHeaderOption(num++, wordFormat("#FF0000FF", ChineseTraditional.Miner.Value));
             MineCooldown =
-                new CustomNumberOption(num++, "Mine Cooldown", 25, 10, 40, 2.5f, CooldownFormat);
+                new CustomNumberOption(num++, ChineseTraditional.MineCooldown.Value, 25, 10, 40, 2.5f, CooldownFormat);
 
-            Swooper = new CustomHeaderOption(num++, "<color=#FF0000FF>Swooper</color>");
-
+            Swooper = 
+                new CustomHeaderOption(num++, wordFormat("#FF0000FF", ChineseTraditional.Swooper.Value));
             SwoopCooldown =
-                new CustomNumberOption(num++, "Swoop Cooldown", 25, 10, 40, 2.5f, CooldownFormat);
+                new CustomNumberOption(num++, ChineseTraditional.SwoopCooldown.Value, 25, 10, 40, 2.5f, CooldownFormat);
             SwoopDuration =
-                new CustomNumberOption(num++, "Swoop Duration", 10, 5, 15, 1f, CooldownFormat);
+                new CustomNumberOption(num++, ChineseTraditional.SwoopDuration.Value, 10, 5, 15, 1f, CooldownFormat);
 
-            Undertaker = new CustomHeaderOption(num++, "<color=#FF0000FF>Undertaker</color>");
-            DragCooldown = new CustomNumberOption(num++, "Drag Cooldown", 25, 10, 40, 2.5f, CooldownFormat);
+            Undertaker = 
+                new CustomHeaderOption(num++, wordFormat("#FF0000FF", ChineseTraditional.Undertaker.Value));
+            DragCooldown = 
+                new CustomNumberOption(num++, ChineseTraditional.DragCooldown.Value, 25, 10, 40, 2.5f, CooldownFormat);
 
-            Assassin = new CustomHeaderOption(num++, "<color=#FF0000FF>Assassin</color>");
-            AssassinKills = new CustomNumberOption(num++, "Number of Assassin Kills", 1, 1, 5, 1);
-            AssassinCrewmateGuess = new CustomToggleOption(num++, "Assassin can Guess \"Crewmate\"", false);
-            AssassinGuessNeutrals = new CustomToggleOption(num++, "Assassin can Guess Neutral roles", false);
-            AssassinMultiKill = new CustomToggleOption(num++, "Assassin can kill more than once per meeting");
+            Assassin = 
+                new CustomHeaderOption(num++, wordFormat("#FF0000FF", ChineseTraditional.Assassin.Value));
+            AssassinKills = 
+                new CustomNumberOption(num++, ChineseTraditional.AssassinKills.Value, 1, 1, 5, 1);
+            AssassinCrewmateGuess = 
+                new CustomToggleOption(num++, ChineseTraditional.AssassinCrewmateGuess.Value, false);
+            AssassinGuessNeutrals = 
+                new CustomToggleOption(num++, ChineseTraditional.AssassinGuessNeutrals.Value, false);
+            AssassinMultiKill = 
+                new CustomToggleOption(num++, ChineseTraditional.AssassinMultiKill.Value);
         }
     }
 }
