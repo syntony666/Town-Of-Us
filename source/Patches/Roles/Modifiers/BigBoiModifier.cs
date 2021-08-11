@@ -1,4 +1,5 @@
 using TownOfUs.Extensions;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles.Modifiers
@@ -6,10 +7,12 @@ namespace TownOfUs.Roles.Modifiers
     public class BigBoiModifier : Modifier, IVisualAlteration
     {
         public static float SpeedFactor = 0.7f;
-        
+
+        private static LanguagePack languagePack = new LanguagePack();
+
         public BigBoiModifier(PlayerControl player) : base(player)
         {
-            Name = "Giant";
+            Name = languagePack.Giant;
             TaskText = () => "Super slow!";
             Color = new Color(1f, 0.5f, 0.5f, 1f);
             ModifierType = ModifierEnum.BigBoi;

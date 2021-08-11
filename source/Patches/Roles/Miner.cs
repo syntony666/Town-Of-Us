@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
@@ -10,11 +11,12 @@ namespace TownOfUs.Roles
 
         public KillButtonManager _mineButton;
         public DateTime LastMined;
+        private static LanguagePack languagePack = new LanguagePack();
 
 
         public Miner(PlayerControl player) : base(player)
         {
-            Name = "Miner";
+            Name = languagePack.Miner;
             ImpostorText = () => "From the top, make it drop, that's a vent";
             TaskText = () => "From the top, make it drop, that's a vent";
             Color = Palette.ImpostorRed;

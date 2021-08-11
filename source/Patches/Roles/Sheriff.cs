@@ -1,13 +1,16 @@
 using System;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
 {
     public class Sheriff : Role
     {
+        private static LanguagePack languagePack = new LanguagePack();
+
         public Sheriff(PlayerControl player) : base(player)
         {
-            Name = "Sheriff";
+            Name = languagePack.Sheriff;
             ImpostorText = () => "Shoot the <color=#FF0000FF>Impostor</color>";
             TaskText = () => "Kill off the impostor but don't kill crewmates.";
             Color = Color.yellow;

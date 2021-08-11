@@ -1,3 +1,4 @@
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles.Modifiers
@@ -8,9 +9,10 @@ namespace TownOfUs.Roles.Modifiers
 
         public bool ButtonUsed;
 
+        private static LanguagePack languagePack = new LanguagePack();
         public ButtonBarry(PlayerControl player) : base(player)
         {
-            Name = "Button Barry";
+            Name = languagePack.ButtonBarry;
             TaskText = () => "Call a button from anywhere!";
             Color = new Color(0.9f, 0f, 1f, 1f);
             ModifierType = ModifierEnum.ButtonBarry;

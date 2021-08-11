@@ -12,6 +12,7 @@ using TownOfUs.Extensions;
 using TownOfUs.Roles.Modifiers;
 using UnityEngine;
 using Object = UnityEngine.Object;
+using TownOfUs.Patches.Language;
 
 namespace TownOfUs.Roles
 {
@@ -22,11 +23,12 @@ namespace TownOfUs.Roles
         public static Sprite HackSprite = bundle.LoadAsset<Sprite>("HackSprite").DontUnload();
         public static Sprite LockSprite = bundle.LoadAsset<Sprite>("Lock").DontUnload();
 
+        private static LanguagePack languagePack = new LanguagePack();
         public bool lastMouse;
 
         public Glitch(PlayerControl owner) : base(owner)
         {
-            Name = "The Glitch";
+            Name = languagePack.TheGlitch;
             Color = Color.green;
             LastHack = DateTime.UtcNow;
             LastMimic = DateTime.UtcNow;

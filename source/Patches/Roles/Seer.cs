@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using TownOfUs.CrewmateRoles.SeerMod;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
@@ -8,10 +9,11 @@ namespace TownOfUs.Roles
     public class Seer : Role
     {
         public List<byte> Investigated = new List<byte>();
+        private static LanguagePack languagePack = new LanguagePack();
 
         public Seer(PlayerControl player) : base(player)
         {
-            Name = "Seer";
+            Name = languagePack.Seer;
             ImpostorText = () => "Investigate roles";
             TaskText = () => "Investigate roles and find the Impostor";
             Color = new Color(1f, 0.8f, 0.5f, 1f);

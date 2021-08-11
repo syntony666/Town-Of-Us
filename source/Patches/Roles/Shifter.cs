@@ -1,13 +1,16 @@
 using System;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
 {
     public class Shifter : Role
     {
+        private static LanguagePack languagePack = new LanguagePack();
+
         public Shifter(PlayerControl player) : base(player)
         {
-            Name = "Shifter";
+            Name = languagePack.Shifter;
             ImpostorText = () => "Shift around different roles";
             TaskText = () => "Steal other people's roles.\nFake Tasks:";
             Color = new Color(0.6f, 0.6f, 0.6f, 1f);

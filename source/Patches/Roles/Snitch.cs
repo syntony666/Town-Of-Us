@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using TownOfUs.ImpostorRoles.CamouflageMod;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
@@ -13,10 +14,12 @@ namespace TownOfUs.Roles
         public List<PlayerControl> SnitchTargets = new List<PlayerControl>();
 
         public int TasksLeft = int.MaxValue;
+        private static LanguagePack languagePack = new LanguagePack();
+
 
         public Snitch(PlayerControl player) : base(player)
         {
-            Name = "Snitch";
+            Name = languagePack.Snitch;
             ImpostorText = () => "Complete all your tasks to discover the Impostors";
             TaskText = () =>
                 TasksDone

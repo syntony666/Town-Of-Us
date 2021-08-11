@@ -1,4 +1,5 @@
 using System;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
@@ -10,10 +11,11 @@ namespace TownOfUs.Roles
         public bool Enabled;
         public DateTime LastCamouflaged;
         public float TimeRemaining;
+        private static LanguagePack languagePack = new LanguagePack();
 
         public Camouflager(PlayerControl player) : base(player)
         {
-            Name = "Camouflager";
+            Name = languagePack.Camouflager;
             ImpostorText = () => "Camouflage and turn everyone grey";
             TaskText = () => "Camouflage and get secret kills";
             Color = Palette.ImpostorRed;

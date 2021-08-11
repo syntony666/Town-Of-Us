@@ -1,14 +1,16 @@
 using System;
+using TownOfUs.Patches.Language;
 
 namespace TownOfUs.Roles
 {
     public class Undertaker : Role
     {
         public KillButtonManager _dragDropButton;
+        private static LanguagePack languagePack = new LanguagePack();
 
         public Undertaker(PlayerControl player) : base(player)
         {
-            Name = "Undertaker";
+            Name = languagePack.Undertaker;
             ImpostorText = () => "Drag bodies and hide them";
             TaskText = () => "Drag bodies around to hide them from being reported";
             Color = Palette.ImpostorRed;

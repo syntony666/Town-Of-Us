@@ -1,12 +1,16 @@
+using TownOfUs.Patches.Language;
+
 namespace TownOfUs.Roles
 {
     public class Janitor : Role
     {
+        private static LanguagePack languagePack = new LanguagePack();
         public KillButtonManager _cleanButton;
 
         public Janitor(PlayerControl player) : base(player)
         {
-            Name = "Janitor";
+
+            Name = languagePack.Janitor;
             ImpostorText = () => "Clean up bodies";
             TaskText = () => "Clean bodies to prevent Crewmates from discovering them.";
             Color = Palette.ImpostorRed;

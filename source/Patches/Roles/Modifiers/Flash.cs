@@ -1,4 +1,5 @@
 using TownOfUs.Extensions;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles.Modifiers
@@ -6,10 +7,11 @@ namespace TownOfUs.Roles.Modifiers
     public class Flash : Modifier, IVisualAlteration
     {
         public static float SpeedFactor = 1.23f;
+        private static LanguagePack languagePack = new LanguagePack();
 
         public Flash(PlayerControl player) : base(player)
         {
-            Name = "Flash";
+            Name = languagePack.Flash;
             TaskText = () => "Superspeed!";
             Color = new Color(1f, 0.5f, 0.5f, 1f);
             ModifierType = ModifierEnum.Flash;

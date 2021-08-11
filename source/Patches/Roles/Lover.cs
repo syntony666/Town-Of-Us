@@ -2,16 +2,18 @@ using System.Collections.Generic;
 using System.Linq;
 using Hazel;
 using TownOfUs.ImpostorRoles.CamouflageMod;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
 {
     public class Lover : Role
     {
+        private static LanguagePack languagePack = new LanguagePack();
         public Lover(PlayerControl player, int num, bool loverImpostor) : base(player)
         {
             var imp = num == 2 && loverImpostor;
-            Name = imp ? "Loving Impostor" : "Lover";
+            Name = imp ? "Loving Impostor" : languagePack.Lovers;
             Color = new Color(1f, 0.4f, 0.8f, 1f);
             ImpostorText = () =>
                 "You are in " + ColorString + "Love</color> with " + ColorString + OtherLover.Player.name;

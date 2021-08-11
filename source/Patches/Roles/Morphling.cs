@@ -1,5 +1,6 @@
 using System;
 using TownOfUs.Extensions;
+using TownOfUs.Patches.Language;
 using TownOfUs.Roles.Modifiers;
 using UnityEngine;
 
@@ -15,10 +16,11 @@ namespace TownOfUs.Roles
 
         public PlayerControl SampledPlayer;
         public float TimeRemaining;
+        private static LanguagePack languagePack = new LanguagePack();
 
         public Morphling(PlayerControl player) : base(player)
         {
-            Name = "Morphling";
+            Name = languagePack.Morphling;
             ImpostorText = () => "Transform into crewmates";
             TaskText = () => "Morph into crewmates to be disguised";
             Color = Palette.ImpostorRed;

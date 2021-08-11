@@ -65,6 +65,8 @@ namespace TownOfUs
 
         public ConfigEntry<ushort> Port { get; set; }
 
+        public static ConfigEntry<string> Lang { get; set; }
+
 
         public override void Load()
         {
@@ -109,6 +111,7 @@ namespace TownOfUs
 
             Ip = Config.Bind("Custom", "Ipv4 or Hostname", "127.0.0.1");
             Port = Config.Bind("Custom", "Port", (ushort) 22023);
+            Lang = Config.Bind("Custom", "Lang", "zh-TW", "zh-TW, US");
             var defaultRegions = ServerManager.DefaultRegions.ToList();
             var ip = Ip.Value;
             if (Uri.CheckHostName(Ip.Value).ToString() == "Dns")

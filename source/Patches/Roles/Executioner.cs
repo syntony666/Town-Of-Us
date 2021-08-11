@@ -1,4 +1,5 @@
 using Il2CppSystem.Collections.Generic;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
@@ -7,10 +8,11 @@ namespace TownOfUs.Roles
     {
         public PlayerControl target;
         public bool TargetVotedOut;
+        private static LanguagePack languagePack = new LanguagePack();
 
         public Executioner(PlayerControl player) : base(player)
         {
-            Name = "Executioner";
+            Name = languagePack.Executioner;
             ImpostorText = () =>
                 target == null ? "You don't have a target for some reason... weird..." : $"Vote {target.name} out";
             TaskText = () =>
