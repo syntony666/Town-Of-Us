@@ -4,11 +4,13 @@ namespace TownOfUs.CustomOption
 {
     public class CustomToggleOption : CustomOption
     {
+        private static LanguagePack languagePack = new LanguagePack();
+
         protected internal CustomToggleOption(int id, string name, bool value = true) : base(id, name,
             CustomOptionType.Toggle,
             value)
         {
-            Format = val => (bool) val ? ChineseTraditional.On.Value : ChineseTraditional.Off.Value;
+            Format = val => (bool) val ? languagePack.On : languagePack.Off;
         }
 
         protected internal bool Get()
