@@ -1,21 +1,25 @@
+using Hazel;
 using System.Collections.Generic;
 using System.Linq;
-using Hazel;
 using TownOfUs.ImpostorRoles.CamouflageMod;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
 {
+
     public class Lover : Role
     {
+        private static LanguagePack languagePack = new LanguagePack();
+
         public Lover(PlayerControl player, int num, bool loverImpostor) : base(player)
         {
             var imp = num == 2 && loverImpostor;
-            Name = imp ? "Loving Impostor" : "Lover";
+            Name = imp ? languagePack.LoverImpostor : languagePack.Lovers;
             Color = new Color(1f, 0.4f, 0.8f, 1f);
             ImpostorText = () =>
-                "You are in " + ColorString + "Love</color> with " + ColorString + OtherLover.Player.name;
-            TaskText = () => $"Stay alive with your love {OtherLover.Player.name} \n and win together";
+                string.Format(languagePack.LoverImpostorText, ColorString, OtherLover.Player.name);
+            TaskText = () => string.Format(languagePack.LoverTaskText, OtherLover.Player.name);
             RoleType = imp ? RoleEnum.LoverImpostor : RoleEnum.Lover;
             Num = num;
             LoverImpostor = loverImpostor;
@@ -58,11 +62,11 @@ namespace TownOfUs.Roles
             {
                 Player.nameText.color = Palette.ImpostorRed;
                 if (player != null) player.NameText.color = Palette.ImpostorRed;
-                return Player.name + "\n" + "Impostor";
+                return Player.name + "\n" + languagePack.LoverImpostor;
             }
 
 
-            return Player.name + "\n" + "Lover";
+            return Player.name + "\n" + languagePack.Lovers;
         }
 
         public static void Gen(List<PlayerControl> crewmates, List<PlayerControl> impostors)

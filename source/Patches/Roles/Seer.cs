@@ -1,19 +1,22 @@
 using System;
 using System.Collections.Generic;
 using TownOfUs.CrewmateRoles.SeerMod;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
 {
     public class Seer : Role
     {
+        private static LanguagePack languagePack = new LanguagePack();
+
         public List<byte> Investigated = new List<byte>();
 
         public Seer(PlayerControl player) : base(player)
         {
-            Name = "Seer";
-            ImpostorText = () => "Investigate roles";
-            TaskText = () => "Investigate roles and find the Impostor";
+            Name = languagePack.Seer;
+            ImpostorText = () => languagePack.SeerImpostorText;
+            TaskText = () => languagePack.SeerTaskText;
             Color = new Color(1f, 0.8f, 0.5f, 1f);
             RoleType = RoleEnum.Seer;
         }

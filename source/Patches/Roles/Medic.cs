@@ -1,14 +1,18 @@
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
 {
+
     public class Medic : Role
     {
+        private static LanguagePack languagePack = new LanguagePack();
+
         public Medic(PlayerControl player) : base(player)
         {
-            Name = "Medic";
-            ImpostorText = () => "Create a shield to protect a crewmate";
-            TaskText = () => "Protect a crewmate with a shield";
+            Name = languagePack.Medic;
+            ImpostorText = () => languagePack.MedicImpostorText;
+            TaskText = () => languagePack.MedicTaskText;
             Color = new Color(0f, 0.4f, 0f, 1f);
             RoleType = RoleEnum.Medic;
             ShieldedPlayer = null;

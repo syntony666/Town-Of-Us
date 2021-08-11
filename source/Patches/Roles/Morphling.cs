@@ -1,13 +1,15 @@
 using System;
 using TownOfUs.Extensions;
+using TownOfUs.Patches.Language;
 using TownOfUs.Roles.Modifiers;
 using UnityEngine;
 
 namespace TownOfUs.Roles
 {
     public class Morphling : Role, IVisualAlteration
-
     {
+        private static LanguagePack languagePack = new LanguagePack();
+
         public KillButtonManager _morphButton;
         public PlayerControl ClosestPlayer;
         public DateTime LastMorphed;
@@ -18,9 +20,9 @@ namespace TownOfUs.Roles
 
         public Morphling(PlayerControl player) : base(player)
         {
-            Name = "Morphling";
-            ImpostorText = () => "Transform into crewmates";
-            TaskText = () => "Morph into crewmates to be disguised";
+            Name = languagePack.Morphling;
+            ImpostorText = () => languagePack.MorphlingImpostorText;
+            TaskText = () => languagePack.MorphlingTaskText;
             Color = Palette.ImpostorRed;
             RoleType = RoleEnum.Morphling;
             Faction = Faction.Impostors;

@@ -1,11 +1,15 @@
 using System;
 using System.Collections.Generic;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
 {
+
     public class Miner : Role
     {
+        private static LanguagePack languagePack = new LanguagePack();
+
         public readonly List<Vent> Vents = new List<Vent>();
 
         public KillButtonManager _mineButton;
@@ -14,9 +18,9 @@ namespace TownOfUs.Roles
 
         public Miner(PlayerControl player) : base(player)
         {
-            Name = "Miner";
-            ImpostorText = () => "From the top, make it drop, that's a vent";
-            TaskText = () => "From the top, make it drop, that's a vent";
+            Name = languagePack.Miner;
+            ImpostorText = () => languagePack.MinerImpostorText;
+            TaskText = () => languagePack.MinerTaskText;
             Color = Palette.ImpostorRed;
             RoleType = RoleEnum.Miner;
             Faction = Faction.Impostors;

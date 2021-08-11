@@ -1,13 +1,16 @@
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles.Modifiers
 {
     public class Diseased : Modifier
     {
+        private static LanguagePack languagePack = new LanguagePack();
+
         public Diseased(PlayerControl player) : base(player)
         {
-            Name = "Diseased";
-            TaskText = () => "Killing you gives Impostors a high cooldown";
+            Name = languagePack.Diseased;
+            TaskText = () => languagePack.DiseasedTaskText;
             Color = Color.grey;
             ModifierType = ModifierEnum.Diseased;
         }

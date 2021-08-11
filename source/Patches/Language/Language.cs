@@ -1,4 +1,5 @@
 ﻿using BepInEx.Configuration;
+using BepInEx.IL2CPP;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,7 +11,14 @@ namespace TownOfUs.Patches.Language
         private static Language language;
         public LanguagePack()
         {
-            language = English.getInstance();
+            if (TownOfUs.ModLanguage == "zh-TW")
+            {
+                language = ChineseTraditional.getInstance();
+            }
+            else
+            {
+                language = English.getInstance();
+            }
         }
         public Language CrewmateRoles => language.CrewmateRoles;
         public string Mayor => language.Mayor.Value;
@@ -43,6 +51,7 @@ namespace TownOfUs.Patches.Language
         public string Swooper => language.Swooper.Value;
         public string Undertaker => language.Undertaker.Value;
         public string Underdog => language.Underdog.Value;
+        public string LoverImpostor => language.LoverImpostor.Value;
 
         public string Modifiers => language.Modifiers.Value;
         public string Torch => language.Torch.Value;
@@ -141,6 +150,70 @@ namespace TownOfUs.Patches.Language
         public string ImpAndNeu => language.ImpAndNeu.Value;
         public string NoImps => language.NoImps.Value;
         public string RegCrew => language.RegCrew.Value;
+
+        public string GiantTaskText => language.GiantTaskText.Value;
+        public string ButtonBarryTaskText => language.ButtonBarryTaskText.Value;
+        public string DiseasedTaskText => language.DiseasedTaskText.Value;
+        public string DrunkTaskText => language.DrunkTaskText.Value;
+        public string FlashTaskText => language.FlashTaskText.Value;
+        public string TiebreakerTaskText => language.TiebreakerTaskText.Value;
+        public string TorchTaskText => language.TorchTaskText.Value;
+
+        public string AltruistImpostorText => language.AltruistImpostorText.Value;
+        public string AltruistTaskText => language.AltruistTaskText.Value;
+        public string ArsonistImpostorText => language.ArsonistImpostorText.Value;
+        public string ArsonistTaskText => language.ArsonistTaskText.Value;
+        public string AssassinImpostorText => language.AssassinImpostorText.Value;
+        public string AssassinTaskText => language.AssassinTaskText.Value;
+        public string CamouflagerImpostorText => language.CamouflagerImpostorText.Value;
+        public string CamouflagerTaskText => language.CamouflagerTaskText.Value;
+        public string UndertakerImpostorText => language.UndertakerImpostorText.Value;
+        public string UndertakerTaskText => language.UndertakerTaskText.Value;
+        public string EngineerImpostorText => language.EngineerImpostorText.Value;
+        public string EngineerTaskText => language.EngineerTaskText.Value;
+        public string ExecutionerImpostorTextNull => language.ExecutionerImpostorTextNull.Value;
+        public string ExecutionerImpostorText => language.ExecutionerImpostorText.Value;
+        public string ExecutionerTaskTextNull => language.ExecutionerTaskTextNull.Value;
+        public string ExecutionerTaskText => language.ExecutionerTaskText.Value;
+        public string TheGlitchImpostorText => language.TheGlitchImpostorText.Value;
+        public string TheGlitchTaskText => language.TheGlitchTaskText.Value;
+        public string InvestigatorImpostorText => language.InvestigatorImpostorText.Value;
+        public string InvestigatorTaskText => language.InvestigatorTaskText.Value;
+        public string JanitorImpostorText => language.JanitorImpostorText.Value;
+        public string JanitorTaskText => language.JanitorTaskText.Value;
+        public string JesterImpostorText => language.JesterImpostorText.Value;
+        public string JesterTaskText => language.JesterTaskText.Value;
+        public string LoverImpostorText => language.LoverImpostorText.Value;
+        public string LoverTaskText => language.LoverTaskText.Value;
+        public string MayorImpostorText => language.MayorImpostorText.Value;
+        public string MayorTaskText => language.MayorTaskText.Value;
+        public string MedicImpostorText => language.MedicImpostorText.Value;
+        public string MedicTaskText => language.MedicTaskText.Value;
+        public string MinerImpostorText => language.MinerImpostorText.Value;
+        public string MinerTaskText => language.MinerTaskText.Value;
+        public string MorphlingImpostorText => language.MorphlingImpostorText.Value;
+        public string MorphlingTaskText => language.MorphlingTaskText.Value;
+        public string PhantomImpostorText => language.PhantomImpostorText.Value;
+        public string PhantomTaskText => language.PhantomTaskText.Value;
+        public string SeerImpostorText => language.SeerImpostorText.Value;
+        public string SeerTaskText => language.SeerTaskText.Value;
+        public string SheriffImpostorText => language.SheriffImpostorText.Value;
+        public string SheriffTaskText => language.SheriffTaskText.Value;
+        public string ShifterImpostorText => language.ShifterImpostorText.Value;
+        public string ShifterTaskText => language.ShifterTaskText.Value;
+        public string SnitchImpostorText => language.SnitchImpostorText.Value;
+        public string SnitchTaskTextDone => language.SnitchTaskTextDone.Value;
+        public string SnitchTaskText => language.SnitchTaskText.Value;
+        public string SpyImpostorText => language.SpyImpostorText.Value;
+        public string SpyTaskText => language.SpyTaskText.Value;
+        public string SwapperImpostorText => language.SwapperImpostorText.Value;
+        public string SwapperTaskText => language.SwapperTaskText.Value;
+        public string SwooperImpostorText => language.SwooperImpostorText.Value;
+        public string SwooperTaskText => language.SwooperTaskText.Value;
+        public string TimeLordImpostorText => language.TimeLordImpostorText.Value;
+        public string TimeLordTaskText => language.TimeLordTaskText.Value;
+        public string UnderdogImpostorText => language.UnderdogImpostorText.Value;
+        public string UnderdogTaskText => language.UnderdogTaskText.Value;
     }
 
     interface Language
@@ -177,6 +250,7 @@ namespace TownOfUs.Patches.Language
         Language Swooper { get; }
         Language Undertaker { get; }
         Language Underdog { get; }
+        Language LoverImpostor { get; }
 
         Language Modifiers { get; }
         Language Torch { get; }
@@ -274,5 +348,69 @@ namespace TownOfUs.Patches.Language
         Language ImpAndNeu { get; }
         Language NoImps { get; }
         Language RegCrew { get; }
+
+        Language GiantTaskText { get; }
+        Language ButtonBarryTaskText { get; }
+        Language DiseasedTaskText { get; }
+        Language DrunkTaskText { get; }
+        Language FlashTaskText { get; }
+        Language TiebreakerTaskText { get; }
+        Language TorchTaskText { get; }
+
+        Language AltruistImpostorText { get; }
+        Language AltruistTaskText { get; }
+        Language ArsonistImpostorText { get; }
+        Language ArsonistTaskText { get; }
+        Language AssassinImpostorText { get; }
+        Language AssassinTaskText { get; }
+        Language CamouflagerImpostorText { get; }
+        Language CamouflagerTaskText { get; }
+        Language UndertakerImpostorText { get; }
+        Language UndertakerTaskText { get; }
+        Language EngineerImpostorText { get; }
+        Language EngineerTaskText { get; }
+        Language ExecutionerImpostorTextNull { get; }
+        Language ExecutionerImpostorText { get; }
+        Language ExecutionerTaskTextNull { get; }
+        Language ExecutionerTaskText { get; }
+        Language TheGlitchImpostorText { get; }
+        Language TheGlitchTaskText { get; }
+        Language InvestigatorImpostorText { get; }
+        Language InvestigatorTaskText { get; }
+        Language JanitorImpostorText { get; }
+        Language JanitorTaskText { get; }
+        Language JesterImpostorText { get; }
+        Language JesterTaskText { get; }
+        Language LoverImpostorText { get; }
+        Language LoverTaskText { get; }
+        Language MayorImpostorText { get; }
+        Language MayorTaskText { get; }
+        Language MedicImpostorText { get; }
+        Language MedicTaskText { get; }
+        Language MinerImpostorText { get; }
+        Language MinerTaskText { get; }
+        Language MorphlingImpostorText { get; }
+        Language MorphlingTaskText { get; }
+        Language PhantomImpostorText { get; }
+        Language PhantomTaskText { get; }
+        Language SeerImpostorText { get; }
+        Language SeerTaskText { get; }
+        Language SheriffImpostorText { get; }
+        Language SheriffTaskText { get; }
+        Language ShifterImpostorText { get; }
+        Language ShifterTaskText { get; }
+        Language SnitchImpostorText { get; }
+        Language SnitchTaskTextDone { get; }
+        Language SnitchTaskText { get; }
+        Language SpyImpostorText { get; }
+        Language SpyTaskText { get; }
+        Language SwapperImpostorText { get; }
+        Language SwapperTaskText { get; }
+        Language SwooperImpostorText { get; }
+        Language SwooperTaskText { get; }
+        Language TimeLordImpostorText { get; }
+        Language TimeLordTaskText { get; }
+        Language UnderdogImpostorText { get; }
+        Language UnderdogTaskText { get; }
     }
 }

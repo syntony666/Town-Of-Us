@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
@@ -28,12 +29,13 @@ namespace TownOfUs.Roles
 
         public Dictionary<byte, string> Guesses = new Dictionary<byte, string>();
 
+        private static LanguagePack languagePack = new LanguagePack();
 
         public Assassin(PlayerControl player) : base(player)
         {
-            Name = "Assassin";
-            ImpostorText = () => "Kill during meetings if you can guess their roles";
-            TaskText = () => "Guess the roles of the people and kill them mid-meeting";
+            Name = languagePack.Assassin;
+            ImpostorText = () => languagePack.AssassinImpostorText;
+            TaskText = () => languagePack.AssassinTaskText;
             Color = Palette.ImpostorRed;
             RoleType = RoleEnum.Assassin;
             Faction = Faction.Impostors;

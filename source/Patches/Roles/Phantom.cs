@@ -1,18 +1,21 @@
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
 {
     public class Phantom : Role
     {
+        private static LanguagePack languagePack = new LanguagePack();
+
         public bool Caught;
         public bool CompletedTasks;
         public bool Faded;
 
         public Phantom(PlayerControl player) : base(player)
         {
-            Name = "Phantom";
-            ImpostorText = () => "";
-            TaskText = () => "Complete all your tasks without being caught!";
+            Name = languagePack.Phantom;
+            ImpostorText = () => languagePack.PhantomImpostorText;
+            TaskText = () => languagePack.PhantomTaskText;
             Color = new Color(0.4f, 0.16f, 0.38f, 1f);
             RoleType = RoleEnum.Phantom;
             Faction = Faction.Neutral;

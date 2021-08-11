@@ -1,4 +1,5 @@
 using Il2CppSystem.Collections.Generic;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
@@ -7,12 +8,14 @@ namespace TownOfUs.Roles
     {
         public bool VotedOut;
 
+        private static LanguagePack languagePack = new LanguagePack();
+
 
         public Jester(PlayerControl player) : base(player)
         {
-            Name = "Jester";
-            ImpostorText = () => "Get voted out";
-            TaskText = () => "Get voted out!\nFake Tasks:";
+            Name = languagePack.Jester;
+            ImpostorText = () => languagePack.JesterImpostorText;
+            TaskText = () => languagePack.JesterTaskText;
             Color = new Color(1f, 0.75f, 0.8f, 1f);
             RoleType = RoleEnum.Jester;
             Faction = Faction.Neutral;

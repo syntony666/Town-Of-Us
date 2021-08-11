@@ -1,13 +1,16 @@
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles.Modifiers
 {
     public class Drunk : Modifier
     {
+        private static LanguagePack languagePack = new LanguagePack();
+
         public Drunk(PlayerControl player) : base(player)
         {
-            Name = "Drunk";
-            TaskText = () => "Inverrrrrted contrrrrols";
+            Name = languagePack.Drunk;
+            TaskText = () => languagePack.DrunkTaskText;
             Color = new Color(0.46f, 0.5f, 0f, 1f);
             ModifierType = ModifierEnum.Drunk;
         }

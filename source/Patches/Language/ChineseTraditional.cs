@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TownOfUs.Patches.Language
+﻿namespace TownOfUs.Patches.Language
 {
-    class ChineseTraditional: Language
+    class ChineseTraditional : Language
     {
         private ChineseTraditional(string value)
         {
@@ -53,6 +49,7 @@ namespace TownOfUs.Patches.Language
         public Language Swooper => new ChineseTraditional("隱鬼");
         public Language Undertaker => new ChineseTraditional("送葬者");
         public Language Underdog => new ChineseTraditional("快刀狗");
+        public Language LoverImpostor => new ChineseTraditional("殺手戀人");
 
         public Language Modifiers => new ChineseTraditional("附加技能");
         public Language Torch => new ChineseTraditional("火把");
@@ -119,7 +116,7 @@ namespace TownOfUs.Patches.Language
         public Language GlitchHackDistanceOption => new ChineseTraditional("小故障干擾距離");
         public Language OnTargetDead => new ChineseTraditional("暴民目標死亡後轉職角色");
         public Language DouseCooldown => new ChineseTraditional("潑油冷卻時間");
-        public Language ArsonistGameEnd => new ChineseTraditional("縱火犯死亡時遊戲是否繼續");
+        public Language ArsonistGameEnd => new ChineseTraditional("縱火犯存活時遊戲是否繼續");
         public Language MorphlingCooldown => new ChineseTraditional("變身冷卻時間");
         public Language MorphlingDuration => new ChineseTraditional("變身維持時間");
         public Language CamouflagerCooldown => new ChineseTraditional("偽裝冷卻時間");
@@ -141,7 +138,7 @@ namespace TownOfUs.Patches.Language
         public Language Everyone => new ChineseTraditional("所有人");
         public Language On => new ChineseTraditional("開");
         public Language Off => new ChineseTraditional("關");
-        public Language Second => new ChineseTraditional("秒"); 
+        public Language Second => new ChineseTraditional("秒");
         public Language Short => new ChineseTraditional("短");
         public Language Normal => new ChineseTraditional("標準");
         public Language Long => new ChineseTraditional("長");
@@ -154,6 +151,119 @@ namespace TownOfUs.Patches.Language
         public Language RegCrew => new ChineseTraditional("一般船員");
 
 
+        public Language GiantTaskText => new ChineseTraditional("超級慢！");
+        public Language ButtonBarryTaskText => new ChineseTraditional("從任何地方召集緊急會議");
+        public Language DiseasedTaskText => new ChineseTraditional("殺手殺死你時有更長的冷卻時間");
+        public Language DrunkTaskText => new ChineseTraditional("顛.....倒倒倒倒 控制制制制");
+        public Language FlashTaskText => new ChineseTraditional("超高速！");
+        public Language TiebreakerTaskText => new ChineseTraditional("你的投票打破僵局了");
+        public Language TorchTaskText => new ChineseTraditional("你能在黑暗中看清楚");
 
+        public Language AltruistImpostorText => new ChineseTraditional("犧牲自己拯救他人");
+
+        public Language AltruistTaskText => new ChineseTraditional("犧牲自己生命作為代價復活一個遺體");
+
+        public Language ArsonistImpostorText => new ChineseTraditional("潑油並點燃玩家們");
+
+        public Language ArsonistTaskText => new ChineseTraditional("潑油並點燃去殺死所有人\n假任務:");
+
+        public Language AssassinImpostorText => new ChineseTraditional("猜對角色並在會議時刺殺");
+
+        public Language AssassinTaskText => new ChineseTraditional("猜測人們的角色並在會議時殺死他們");
+
+        public Language CamouflagerImpostorText => new ChineseTraditional("偽裝並使所有人變灰色");
+
+        public Language CamouflagerTaskText => new ChineseTraditional("偽裝並暗殺");
+
+        public Language UndertakerImpostorText => new ChineseTraditional("拖著屍體並隱藏它們");
+
+        public Language UndertakerTaskText => new ChineseTraditional("拖著屍體四處隱藏它們避免被舉報");
+
+        public Language EngineerImpostorText => new ChineseTraditional("維護地圖中重要的系統");
+
+        public Language EngineerTaskText => new ChineseTraditional("能跳地洞並在任何地方修復破壞");
+
+        public Language ExecutionerImpostorTextNull => new ChineseTraditional("奇怪...由於某些原因 你沒有目標...");
+        public Language ExecutionerImpostorText => new ChineseTraditional("把 {0} 票出去吧");
+
+        public Language ExecutionerTaskTextNull => new ChineseTraditional("奇怪... 由於某些原因 你沒有目標...");
+        public Language ExecutionerTaskText => new ChineseTraditional("把 {0} 票出去吧/n假任務");
+
+        public Language TheGlitchImpostorText => new ChineseTraditional("你是小故障");
+
+        public Language TheGlitchTaskText => new ChineseTraditional("作為故障般的存在殺人吧");
+
+        public Language InvestigatorImpostorText => new ChineseTraditional("檢視足跡並找到所有狼人");
+
+        public Language InvestigatorTaskText => new ChineseTraditional("你可以看到所有人的足跡");
+
+        public Language JanitorImpostorText => new ChineseTraditional("清理屍體");
+
+        public Language JanitorTaskText => new ChineseTraditional("清理屍體避免被船員們發現");
+
+        public Language JesterImpostorText => new ChineseTraditional("被票出去");
+
+        public Language JesterTaskText => new ChineseTraditional("被票出去吧!/n假任務:");
+
+        public Language LoverImpostorText => new ChineseTraditional("你跟 {0}{1}</color> 墮入愛河了");
+
+        public Language LoverTaskText => new ChineseTraditional("與你的伴侶 {0} 一同存活\n 並贏得勝利");
+
+        public Language MayorImpostorText => new ChineseTraditional("保存你的票來去複數投票");
+
+        public Language MayorTaskText => new ChineseTraditional("保存你的票數來多次投票");
+
+        public Language MedicImpostorText => new ChineseTraditional("創造一個護盾保護船員");
+
+        public Language MedicTaskText => new ChineseTraditional("使用護盾保護一名船員");
+
+        public Language MinerImpostorText => new ChineseTraditional("現在從頂部開始, 挖下去 ,這裏就是一個新通風口");
+
+        public Language MinerTaskText => new ChineseTraditional("現在從頂部開始, 挖下去 ,這裏就是一個新通風口");
+
+        public Language MorphlingImpostorText => new ChineseTraditional("變身成為船員");
+
+        public Language MorphlingTaskText => new ChineseTraditional("變身成為船員進行偽裝");
+
+        public Language PhantomImpostorText => new ChineseTraditional("");
+
+        public Language PhantomTaskText => new ChineseTraditional("完成你所有的任務而不被發現!");
+
+        public Language SeerImpostorText => new ChineseTraditional("調查其他人的身份");
+
+        public Language SeerTaskText => new ChineseTraditional("調查其他人的身份找出誰是狼人");
+
+        public Language SheriffImpostorText => new ChineseTraditional("射殺<color=#FF0000FF>狼人</color>");
+
+        public Language SheriffTaskText => new ChineseTraditional("殺死狼人但不要誤殺船員");
+
+        public Language ShifterImpostorText => new ChineseTraditional("在不同身份之間轉換");
+
+        public Language ShifterTaskText => new ChineseTraditional("偷走其他人的身份\n假任務:");
+
+        public Language SnitchImpostorText => new ChineseTraditional("完成所有任務來揭發狼人");
+
+        public Language SnitchTaskTextDone => new ChineseTraditional("找到指向狼人的箭頭!");
+        public Language SnitchTaskText => new ChineseTraditional("完成所有任務來揭發狼人!");
+
+        public Language SpyImpostorText => new ChineseTraditional("四處窺探並尋找線索");
+
+        public Language SpyTaskText => new ChineseTraditional("監視其他人並找出誰是狼人");
+
+        public Language SwapperImpostorText => new ChineseTraditional("交換兩人所得的票數");
+
+        public Language SwapperTaskText => new ChineseTraditional("交換兩人所得的票數,大肆破壞！");
+
+        public Language SwooperImpostorText => new ChineseTraditional("短暫地進行隱身");
+
+        public Language SwooperTaskText => new ChineseTraditional("隱身並偷偷地殺人");
+
+        public Language TimeLordImpostorText => new ChineseTraditional("回溯時間");
+
+        public Language TimeLordTaskText => new ChineseTraditional("回溯時間!");
+
+        public Language UnderdogImpostorText => new ChineseTraditional("使用你東山再起的能力獲勝");
+
+        public Language UnderdogTaskText => new ChineseTraditional("兩位狼人在場時擊殺冷卻時間較長 只剩下一位狼人時冷卻時間較短");
     }
 }

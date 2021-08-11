@@ -12,6 +12,7 @@ using TownOfUs.Extensions;
 using TownOfUs.Roles.Modifiers;
 using UnityEngine;
 using Object = UnityEngine.Object;
+using TownOfUs.Patches.Language;
 
 namespace TownOfUs.Roles
 {
@@ -23,10 +24,12 @@ namespace TownOfUs.Roles
         public static Sprite LockSprite = bundle.LoadAsset<Sprite>("Lock").DontUnload();
 
         public bool lastMouse;
+        private static LanguagePack languagePack = new LanguagePack();
+
 
         public Glitch(PlayerControl owner) : base(owner)
         {
-            Name = "The Glitch";
+            Name = languagePack.TheGlitch;
             Color = Color.green;
             LastHack = DateTime.UtcNow;
             LastMimic = DateTime.UtcNow;
@@ -38,8 +41,8 @@ namespace TownOfUs.Roles
             MimicList = null;
             IsUsingMimic = false;
             RoleType = RoleEnum.Glitch;
-            ImpostorText = () => "You are the glitch";
-            TaskText = () => "Murder players as the Glitch:";
+            ImpostorText = () => languagePack.TheGlitchImpostorText;
+            TaskText = () => languagePack.TheGlitchTaskText;
             Faction = Faction.Neutral;
         }
 

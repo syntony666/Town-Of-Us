@@ -1,4 +1,5 @@
 using System;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -6,6 +7,8 @@ namespace TownOfUs.Roles
 {
     public class Swooper : Role
     {
+        private static LanguagePack languagePack = new LanguagePack();
+
         public KillButtonManager _swoopButton;
         public bool Enabled;
         public DateTime LastSwooped;
@@ -13,9 +16,9 @@ namespace TownOfUs.Roles
 
         public Swooper(PlayerControl player) : base(player)
         {
-            Name = "Swooper";
-            ImpostorText = () => "Turn invisible temporarily";
-            TaskText = () => "Turn invisible and sneakily kill";
+            Name = languagePack.Swooper;
+            ImpostorText = () => languagePack.SwooperImpostorText;
+            TaskText = () => languagePack.SwooperTaskText;
             Color = Palette.ImpostorRed;
             RoleType = RoleEnum.Swooper;
             Faction = Faction.Impostors;

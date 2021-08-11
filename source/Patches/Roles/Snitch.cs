@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using TownOfUs.ImpostorRoles.CamouflageMod;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
 {
     public class Snitch : Role
     {
+        private static LanguagePack languagePack = new LanguagePack();
+
         public List<ArrowBehaviour> ImpArrows = new List<ArrowBehaviour>();
 
         public List<ArrowBehaviour> SnitchArrows = new List<ArrowBehaviour>();
@@ -16,12 +19,12 @@ namespace TownOfUs.Roles
 
         public Snitch(PlayerControl player) : base(player)
         {
-            Name = "Snitch";
-            ImpostorText = () => "Complete all your tasks to discover the Impostors";
+            Name = languagePack.Snitch;
+            ImpostorText = () => languagePack.SnitchImpostorText;
             TaskText = () =>
                 TasksDone
-                    ? "Find the arrows pointing to the Impostors!"
-                    : "Complete all your tasks to discover the Impostors!";
+                    ? languagePack.SnitchTaskTextDone
+                    : languagePack.SnitchTaskText;
             Color = new Color(0.83f, 0.69f, 0.22f, 1f);
             Hidden = !CustomGameOptions.SnitchOnLaunch;
             RoleType = RoleEnum.Snitch;

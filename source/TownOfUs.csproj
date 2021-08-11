@@ -19,4 +19,8 @@
     <EmbeddedResource Include="Resources\*" />
     <EmbeddedResource Include="Resources\Hats\**" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Patches\Language\English.cs" />
+  </ItemGroup>
 </Project>

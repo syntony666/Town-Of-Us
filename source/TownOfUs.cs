@@ -65,12 +65,18 @@ namespace TownOfUs
 
         public ConfigEntry<ushort> Port { get; set; }
 
+        public ConfigEntry<string> Lang { get; set; }
+
+        public static string ModLanguage;
 
         public override void Load()
         {
             System.Console.WriteLine("000.000.000.000/000000000000000000");
 
             _harmony = new Harmony("com.slushiegoose.townofus");
+
+            Lang = Config.Bind("Custom", "Lang", "zh-TW");
+            ModLanguage = Lang.Value;
 
             Generate.GenerateAll();
 

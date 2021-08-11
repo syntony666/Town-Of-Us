@@ -153,7 +153,124 @@ namespace TownOfUs.Patches.Language
         public Language NoImps => new English("非狼人陣營");
         public Language RegCrew => new English("一般船員");
 
+        public Language GiantTaskText => new English("Super slow!");
+        public Language ButtonBarryTaskText => new English("Call a button from anywhere!");
+        public Language DiseasedTaskText => new English("Killing you gives Impostors a high cooldown");
+        public Language DrunkTaskText => new English("Inverrrrrted contrrrrols");
+        public Language FlashTaskText => new English("Superspeed!");
+        public Language TiebreakerTaskText => new English("Your vote breaks ties");
+        public Language TorchTaskText => new English("You can see in the dark.");
 
+        public Language AltruistImpostorText => new English("");
 
+        public Language AltruistTaskText => new English("");
+
+        public Language ArsonistImpostorText => new English("");
+
+        public Language ArsonistTaskText => new English("");
+
+        public Language AssassinImpostorText => new English("");
+
+        public Language AssassinTaskText => new English("");
+
+        public Language CamouflagerImpostorText => new English("");
+
+        public Language CamouflagerTaskText => new English("");
+
+        public Language UndertakerImpostorText => new English("");
+
+        public Language UndertakerTaskText => new English("");
+
+        public Language EngineerImpostorText => new English("");
+
+        public Language EngineerTaskText => new English("");
+
+        public Language ExecutionerImpostorText => new English("");
+
+        public Language ExecutionerTaskText => new English("");
+
+        public Language TheGlitchImpostorText => new English("");
+
+        public Language TheGlitchTaskText => new English("");
+
+        public Language InvestigatorImpostorText => new English("");
+
+        public Language InvestigatorTaskText => new English("");
+
+        public Language JanitorImpostorText => new English("");
+
+        public Language JanitorTaskText => new English("");
+
+        public Language JesterImpostorText => new English("");
+
+        public Language JesterTaskText => new English("");
+
+        public Language LoverImpostorText => new English("");
+
+        public Language LoverTaskText => new English("");
+
+        public Language MayorImpostorText => new English("");
+
+        public Language MayorTaskText => new English("");
+
+        public Language MedicImpostorText => new English("");
+
+        public Language MedicTaskText => new English("");
+
+        public Language MinerImpostorText => new English("");
+
+        public Language MinerTaskText => new English("");
+
+        public Language MorphlingImpostorText => new English("");
+
+        public Language MorphlingTaskText => new English("");
+
+        public Language PhantomImpostorText => new English("");
+
+        public Language PhantomTaskText => new English("");
+
+        public Language SeerImpostorText => new English("");
+
+        public Language SeerTaskText => new English("");
+
+        public Language SheriffImpostorText => new English("");
+
+        public Language SheriffTaskText => new English("");
+
+        public Language ShifterImpostorText => new English("");
+
+        public Language ShifterTaskText => new English("");
+
+        public Language SnitchImpostorText => new English("");
+
+        public Language SnitchTaskText => new English("");
+
+        public Language SpyImpostorText => new English("");
+
+        public Language SpyTaskText => new English("");
+
+        public Language SwapperImpostorText => new English("");
+
+        public Language SwapperTaskText => new English("");
+
+        public Language SwooperImpostorText => new English("");
+
+        public Language SwooperTaskText => new English("");
+
+        public Language TimeLordImpostorText => new English("");
+
+        public Language TimeLordTaskText => new English("");
+
+        public Language UnderdogImpostorText => new English("");
+
+        public Language UnderdogTaskText => new English("");
+
+        public Language LoverImpostor => throw new NotImplementedException();
+
+        public Language ExecutionerImpostorTextNull => throw new NotImplementedException();
+
+        public Language ExecutionerTaskTextNull => throw new NotImplementedException();
+
+        public Language SnitchTaskTextDone => throw new NotImplementedException();
     }
 }

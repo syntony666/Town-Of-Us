@@ -1,3 +1,4 @@
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
@@ -9,11 +10,13 @@ namespace TownOfUs.Roles
 
         public bool ReviveUsed;
 
+        private static LanguagePack languagePack = new LanguagePack();
+
         public Altruist(PlayerControl player) : base(player)
         {
-            Name = "Altruist";
-            ImpostorText = () => "Sacrifice yourself to save another";
-            TaskText = () => "Revive a dead body at the cost of your own life.";
+            Name = languagePack.Altruist;
+            ImpostorText = () => languagePack.AltruistImpostorText;
+            TaskText = () => languagePack.AltruistTaskText;
             Color = new Color(0.4f, 0f, 0f, 1f);
             RoleType = RoleEnum.Altruist;
         }

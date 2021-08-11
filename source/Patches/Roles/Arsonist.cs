@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Hazel;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
@@ -15,12 +16,13 @@ namespace TownOfUs.Roles
         public bool IgniteUsed;
         public DateTime LastDoused;
 
+        private static LanguagePack languagePack = new LanguagePack();
 
         public Arsonist(PlayerControl player) : base(player)
         {
-            Name = "Arsonist";
-            ImpostorText = () => "Douse players and ignite the light";
-            TaskText = () => "Douse players and ignite to kill everyone\nFake Tasks:";
+            Name = languagePack.Arsonist;
+            ImpostorText = () => languagePack.ArsonistImpostorText;
+            TaskText = () => languagePack.ArsonistTaskText;
             Color = new Color(1f, 0.3f, 0f);
             RoleType = RoleEnum.Arsonist;
             Faction = Faction.Neutral;

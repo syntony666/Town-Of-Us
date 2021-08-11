@@ -1,16 +1,19 @@
 using System;
 using TownOfUs.CrewmateRoles.TimeLordMod;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
 {
     public class TimeLord : Role
     {
+        private static LanguagePack languagePack = new LanguagePack();
+
         public TimeLord(PlayerControl player) : base(player)
         {
-            Name = "Time Lord";
-            ImpostorText = () => "Rewind Time";
-            TaskText = () => "Rewind Time!";
+            Name = languagePack.TimeLord;
+            ImpostorText = () => languagePack.TimeLordImpostorText;
+            TaskText = () => languagePack.TimeLordTaskText;
             Color = new Color(0f, 0f, 1f, 1f);
             RoleType = RoleEnum.TimeLord;
             Scale = 1.4f;

@@ -1,4 +1,5 @@
 using System;
+using TownOfUs.Patches.Language;
 
 namespace TownOfUs.Roles
 {
@@ -6,11 +7,13 @@ namespace TownOfUs.Roles
     {
         public KillButtonManager _dragDropButton;
 
+        private static LanguagePack languagePack = new LanguagePack();
+
         public Undertaker(PlayerControl player) : base(player)
         {
-            Name = "Undertaker";
-            ImpostorText = () => "Drag bodies and hide them";
-            TaskText = () => "Drag bodies around to hide them from being reported";
+            Name = languagePack.Undertaker;
+            ImpostorText = () => languagePack.UndertakerImpostorText;
+            TaskText = () => languagePack.UndertakerTaskText;
             Color = Palette.ImpostorRed;
             RoleType = RoleEnum.Undertaker;
             Faction = Faction.Impostors;

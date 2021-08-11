@@ -1,4 +1,5 @@
 using Il2CppSystem.Collections.Generic;
+using TownOfUs.Patches.Language;
 using UnityEngine;
 
 namespace TownOfUs.Roles
@@ -8,15 +9,17 @@ namespace TownOfUs.Roles
         public PlayerControl target;
         public bool TargetVotedOut;
 
+        private static LanguagePack languagePack = new LanguagePack();
+
         public Executioner(PlayerControl player) : base(player)
         {
-            Name = "Executioner";
+            Name = languagePack.Executioner;
             ImpostorText = () =>
-                target == null ? "You don't have a target for some reason... weird..." : $"Vote {target.name} out";
+                target == null ? languagePack.ExecutionerImpostorTextNull : string.Format(languagePack.ExecutionerImpostorText, target.name);
             TaskText = () =>
                 target == null
-                    ? "You don't have a target for some reason... weird..."
-                    : $"Vote {target.name} out\nFake Tasks:";
+                    ? languagePack.ExecutionerTaskTextNull
+                    : string.Format(languagePack.ExecutionerTaskText, target.name);
             Color = new Color(0.55f, 0.25f, 0.02f, 1f);
             RoleType = RoleEnum.Executioner;
             Faction = Faction.Neutral;
