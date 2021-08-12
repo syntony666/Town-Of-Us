@@ -1,6 +1,3 @@
-
-[![Discord](./Images/Polus.png)](https://discord.gg/polus)
-
 ![LOGO](./Images/TOU-logo.png)
 ![Roles](./Images/Roles3.png)
 
