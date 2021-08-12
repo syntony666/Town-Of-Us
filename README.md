@@ -58,33 +58,33 @@
 <br/>
 
 ## Installation Guide (Epic Games)
-**1. [Download](#releases) the Town of Us version corresponding to the installed Among Us version.**\
+**1. [下載](#正式版本) Town of us 並找尋對應 Among us 的版本**\
 \
-**2. Go to your Epic Games library.**\
+**2.  前往你的 Epic Games 收藏庫**\
 \
-**3. Find Among Us and click on the 3 dots `...` > click `Uninstall`.**\
+**3. 找到 Among us 並點擊 ` ... `  接著按下 `解除安裝`**\
 \
-**4. Confirm you want to Uninstall Among Us.**\
+**4. `確認`你想要解除 Among us**\
 \
-**5. In the Epic library, click on Among Us to install.**\
+**5. 在收藏庫 ，點選 Among us 進行安裝**\
 \
-**6. Copy the Folder Path.**\
+**6. 複製檔案路徑**\
 \
-**7. Uncheck Auto-Update.**\
+**7. 取消選取自動更新.**\
 \
-**8. Click on Install.**\
+**8. 點擊安裝**\
 \
-**9. Click Yes on the Windows popup.**\
+**9. 在彈出視窗中點選`是`**\
 \
-**10. Paste the folder path in Windows search bar.**\
+**10. 在搜尋欄中貼上檔案路徑**\
 \
-**11. Click on Enter.**\
+**11. 點擊`Enter`**\
 \
-**12. Copy or move the contents of the Town Of Us zip file into the AmongUs folder.**\
+**12. 複製或移動 Town of us 壓縮檔至 Among us 資料夾**\
 \
-**13. Finally, launch Among Us from Epic Games library.**\
+**13. 最後，從 Epic Games 收藏庫開啟 Among us**\
 \
-A first launch may take up to 5 minutes, so be patient if it doesn't launch immediately.<br/>
+第一次開啟可能會花上5分鐘時間，若沒有立即開啟，請耐心等待<br/>
 <br/>
 
 ![Install](https://i.imgur.com/pvBAyZN.png)
