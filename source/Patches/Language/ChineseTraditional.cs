@@ -99,7 +99,7 @@
         public Language SeerInfo => new ChineseTraditional("預言家所得資訊");
         public Language SeerInfoOption0 => new ChineseTraditional("角色身分");
         public Language SeerInfoOption1 => new ChineseTraditional("角色陣營");
-        public Language SeeReveal => new ChineseTraditional("誰可看見查驗資訊");
+        public Language SeeReveal => new ChineseTraditional("誰能夠知道他們被查驗");
         public Language NeutralRed => new ChineseTraditional("中立陣營顯示為狼人");
         public Language SnitchOnLaunch => new ChineseTraditional("告密者遊戲開始時知道自己的身份");
         public Language SnitchSeesNeutrals => new ChineseTraditional("告密者可知中立角色");
