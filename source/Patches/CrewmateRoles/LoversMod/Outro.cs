@@ -1,6 +1,7 @@
 using System.Linq;
 using HarmonyLib;
 using TMPro;
+using TownOfUs.Patches.Language;
 using TownOfUs.Roles;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ namespace TownOfUs.CrewmateRoles.LoversMod
     [HarmonyPatch(typeof(EndGameManager), nameof(EndGameManager.Start))]
     internal class Outro
     {
+        private static LanguagePack languagePack = new LanguagePack();
+
         public static void Postfix(EndGameManager __instance)
         {
             TextMeshPro text;
@@ -52,7 +55,7 @@ namespace TownOfUs.CrewmateRoles.LoversMod
             __instance.BackgroundBar.material.color = new Color(1f, 0.4f, 0.8f, 1f);
 
             text = Object.Instantiate(__instance.WinText);
-            text.text = "Love couple wins";
+            text.text = string.Format(languagePack.Win, languagePack.Lovers);
             text.color = new Color(1f, 0.4f, 0.8f, 1f);
             pos = __instance.WinText.transform.localPosition;
             pos.y = 1.5f;

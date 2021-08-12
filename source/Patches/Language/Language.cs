@@ -11,14 +11,16 @@ namespace TownOfUs.Patches.Language
         private static Language language;
         public LanguagePack()
         {
-            if (TownOfUs.ModLanguage == "zh-TW")
-            {
-                language = ChineseTraditional.getInstance();
-            }
-            else
-            {
-                language = English.getInstance();
-            }
+            language = ChineseTraditional.getInstance();
+
+            //if (TownOfUs.ModLanguage == "zh-TW")
+            //{
+            //    language = ChineseTraditional.getInstance();
+            //}
+            //else
+            //{
+            //    language = English.getInstance();
+            //}
         }
         public Language CrewmateRoles => language.CrewmateRoles;
         public string Mayor => language.Mayor.Value;
@@ -150,6 +152,8 @@ namespace TownOfUs.Patches.Language
         public string ImpAndNeu => language.ImpAndNeu.Value;
         public string NoImps => language.NoImps.Value;
         public string RegCrew => language.RegCrew.Value;
+        public string Crewmate => language.Crewmate.Value;
+        public string Impostor => language.Impostor.Value;
 
         public string GiantTaskText => language.GiantTaskText.Value;
         public string ButtonBarryTaskText => language.ButtonBarryTaskText.Value;
@@ -214,6 +218,8 @@ namespace TownOfUs.Patches.Language
         public string TimeLordTaskText => language.TimeLordTaskText.Value;
         public string UnderdogImpostorText => language.UnderdogImpostorText.Value;
         public string UnderdogTaskText => language.UnderdogTaskText.Value;
+
+        public string Win => language.Win.Value;
     }
 
     interface Language
@@ -348,6 +354,8 @@ namespace TownOfUs.Patches.Language
         Language ImpAndNeu { get; }
         Language NoImps { get; }
         Language RegCrew { get; }
+        Language Crewmate { get; }
+        Language Impostor { get; }
 
         Language GiantTaskText { get; }
         Language ButtonBarryTaskText { get; }
@@ -412,5 +420,7 @@ namespace TownOfUs.Patches.Language
         Language TimeLordTaskText { get; }
         Language UnderdogImpostorText { get; }
         Language UnderdogTaskText { get; }
+
+        Language Win { get; }
     }
 }

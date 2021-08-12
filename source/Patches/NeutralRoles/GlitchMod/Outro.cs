@@ -1,5 +1,6 @@
 using System.Linq;
 using HarmonyLib;
+using TownOfUs.Patches.Language;
 using TownOfUs.Roles;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ namespace TownOfUs.NeutralRoles.GlitchMod
     [HarmonyPatch(typeof(EndGameManager), nameof(EndGameManager.Start))]
     public class Outro
     {
+        private static LanguagePack languagePack = new LanguagePack();
+
         public static void Postfix(EndGameManager __instance)
         {
             var role = Role.AllRoles.FirstOrDefault(x => x.RoleType == RoleEnum.Glitch && ((Glitch) x).GlitchWins);
@@ -17,7 +20,7 @@ namespace TownOfUs.NeutralRoles.GlitchMod
             array[0].NameText.text = role.ColorString + array[0].NameText.text + "</color>";
             __instance.BackgroundBar.material.color = role.Color;
             var text = Object.Instantiate(__instance.WinText);
-            text.text = "The Glitch wins";
+            text.text = string.Format(languagePack.Win, languagePack.TheGlitch);
             text.color = role.Color;
             var pos = __instance.WinText.transform.localPosition;
             pos.y = 1.5f;

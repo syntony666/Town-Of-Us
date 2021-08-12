@@ -149,6 +149,8 @@
         public Language ImpAndNeu => new ChineseTraditional("中立陣營及狼人陣營");
         public Language NoImps => new ChineseTraditional("非狼人陣營");
         public Language RegCrew => new ChineseTraditional("一般船員");
+        public Language Crewmate => new ChineseTraditional("船員");
+        public Language Impostor => new ChineseTraditional("狼人");
 
 
         public Language GiantTaskText => new ChineseTraditional("超級慢！");
@@ -262,8 +264,10 @@
 
         public Language TimeLordTaskText => new ChineseTraditional("回溯時間!");
 
-        public Language UnderdogImpostorText => new ChineseTraditional("使用你東山再起的能力獲勝");
+        public Language UnderdogImpostorText => new ChineseTraditional("使用你翻盤的能力獲勝");
 
-        public Language UnderdogTaskText => new ChineseTraditional("兩位狼人在場時擊殺冷卻時間較長 只剩下一位狼人時冷卻時間較短");
+        public Language UnderdogTaskText => new ChineseTraditional("兩位狼人在場時擊殺冷卻時間較長\n只剩下一位狼人時冷卻時間較短");
+
+        public Language Win => new ChineseTraditional("{0} 獲勝");
     }
 }
