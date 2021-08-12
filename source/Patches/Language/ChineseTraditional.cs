@@ -152,6 +152,7 @@
         public Language Crewmate => new ChineseTraditional("船員");
         public Language Impostor => new ChineseTraditional("狼人");
         public Language Role => new ChineseTraditional("角色");
+        public Language Modifier => new ChineseTraditional("附加功能");
 
 
         public Language GiantTaskText => new ChineseTraditional("超級慢！");

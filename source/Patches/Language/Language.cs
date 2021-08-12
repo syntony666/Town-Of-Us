@@ -155,6 +155,7 @@ namespace TownOfUs.Patches.Language
         public string Crewmate => language.Crewmate.Value;
         public string Impostor => language.Impostor.Value;
         public string Role => language.Role.Value;
+        public string Modifier => language.Modifier.Value;
 
         public string GiantTaskText => language.GiantTaskText.Value;
         public string ButtonBarryTaskText => language.ButtonBarryTaskText.Value;
