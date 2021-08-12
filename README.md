@@ -57,7 +57,7 @@
 第一次開啟可能會花上5分鐘時間，若沒有立即開啟，請耐心等待<br/>
 <br/>
 
-## Installation Guide (Epic Games)
+## Epic Games 安裝方法
 **1. [下載](#正式版本) Town of us 並找尋對應 Among us 的版本**\
 \
 **2.  前往你的 Epic Games 收藏庫**\
