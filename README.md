@@ -4,61 +4,64 @@
 ![LOGO](./Images/TOU-logo.png)
 ![Roles](./Images/Roles3.png)
 
-An Among Us mod that adds a bunch of roles, modifiers and game settings
+這是增加了其他角色及設定的 Among Us mod 
 
-Town of Us (Traditional Chinese Version) is translated by @syntony666, wwa3123#4950, 玄月#7784, ryanchow#2126.
+繁體中文版本是由 @syntony666 進行程式碼重構，由 wwa3123#4950, 玄月#7784, ryanchow#2126 進行翻譯
 
-If there's any suggestion, please report the issue on GitHub.
+如果有任何翻譯上的問題，可以發issue來告訴我，讓遊玩體驗更加順利
 
+**好人陣營**
 
-**Crewmate Roles**
-- [Mayor](#mayor)
-- [Lovers](#lovers)
-- [Sheriff](#sheriff)
-- [Engineer](#engineer)
-- [Swapper](#swapper)
-- [Investigator](#investigator)
-- [Time Lord](#time-lord)
-- [Medic](#medic)
-- [Seer](#seer)
-- [Spy](#spy)
-- [Snitch](#snitch)
-- [Altruist](#altruist)
+- [市長](#mayor)
+- [戀人](#lovers)
+- [警長](#sheriff)
+- [工程師](#engineer)
+- [交換者](#swapper)
+- [研究者](#investigator)
+- [奇異博士](#time-lord)
+- [軍醫](#medic)
+- [預言家](#seer)
+- [間諜](#spy)
+- [告密者](#snitch)
+- [利他主義者](#altruist)
 
-**Neutral Roles**
-- [Jester](#jester)
-- [Shifter](#shifter)
-- [The Glitch](#the-glitch)
-- [Executioner](#executioner)
-- [Arsonist](#arsonist)
-- [Phantom](#phantom)
+**中立陣營**
 
-**Impostor Roles**
-- [Janitor](#janitor)
-- [Morphling](#morphling)
-- [Camouflager](#camouflager)
-- [Miner](#miner)
-- [Swooper](#swooper)
-- [Assassin](#assassin)
-- [Underdog](#underdog)
-- [Undertaker](#undertaker)
+- [小丑](#jester)
+- [身分小偷](#shifter)
+- [小故障](#the-glitch)
+- [暴民](#executioner)
+- [縱火犯](#arsonist)
+- [怨靈](#phantom)
 
-**Modifiers**
-- [Torch](#torch)
-- [Diseased](#diseased)
-- [Flash](#flash)
-- [Tiebreaker](#tiebreaker)
-- [Drunk](#drunk)
-- [Giant](#giant)
-- [Button Barry](#button-barry)
+**狼人陣營**
+
+- [看門人](#janitor)
+- [百變怪](#morphling)
+- [魔術師](#camouflager)
+- [礦工](#miner)
+- [隱鬼](#swooper)
+- [暗殺者](#assassin)
+- [快刀狗](#underdog)
+- [送葬者](#undertaker)
+
+**附加技能**
+
+- [火把](#torch)
+- [感染者](#diseased)
+- [速行俠](#flash)
+- [決勝者](#tiebreaker)
+- [醉漢](#drunk)
+- [巨人](#giant)
+- [會議主持人](#button-barry)
 
 
 
 -----------------------
-# Releases
-| Among Us - Version| Mod Version | Origin Link | Chinese Version |
+# 正式版本
+| Among Us - Version| Mod 版本 | 英文版本 | 中文版本                                                     |
 |----------|-------------|-----------------|-----------------|
-| 2021.6.30s & 2021.6.30e & 2021.7.20e | v2.2.1 | [Download](https://github.com/polusgg/Town-Of-Us/releases/download/v2.2.1/TOU_221.zip) | [Download]() |
+| 2021.6.30s & 2021.6.30e & 2021.7.20e | v2.2.1 | [Download](https://github.com/polusgg/Town-Of-Us/releases/download/v2.2.1/TOU_221.zip) | [Download](https://github.com/syntony666/Town-Of-Us/releases/download/v2.2.1/TOU_221_zh_TW.zip) |
 
 <details>
   <summary> Changelog </summary>
@@ -70,36 +73,36 @@ If there's any suggestion, please report the issue on GitHub.
 
 
 -----------------------
-# Installation
-## Requirements 
+# 安裝方法
+## 前置需求
 - Among Us
-- Steam or Epic Games
+- Steam 或是 Epic Games
 
-## Installation Guide (Steam)
-**1. Create a new folder on `Desktop`, called `Town of Us`.**\
-This can be created anywhere and be named anything, as long as this folder is easy to locate.\
+## Steam 安裝方法
+**1. 在 `Desktop`新增一個叫做`Town of Us`的資料夾**\
+你可以隨意的地方新增資料夾，只要你能快速的存取到它\
 \
-**2. Open Steam, go to `Library` and locate Among Us. Right click on it, select `Properties...`. Then, under `Local Files`, click on `Browse...`.**\
-This opens the folder containing the Among Us application.\
+**2. 到Steam收藏庫 右鍵Among Us 選擇`內容...`後在`本機檔案`中點擊`瀏覽...`**\
+這方法可以快速找到遊戲主程式的存放資料夾\
 \
-**3. Delete everything in the currently opened folder.**\
-Don't worry, this will not delete the game. This simply verifies the Among Us folder being entirely clean.\
+**3. 刪除資料夾所有裡的檔案**\
+不用擔心會刪除遊戲，這只是確保其資料夾是完全乾淨的\
 \
-**4. On Steam, locate Among Us once again. Right click on it, select `Properties...`. Now, under `Local Files`, click on `Verify integrity of game files...`.**\
+**4. 回到剛剛步驟2中開啟Steam `本機檔案`的頁面，並點擊`驗證遊戲檔案的完整性...`**\
 This restores all of the game files as a fresh installation.\
 \
-**5. Copy all of the files from the `Among Us` folder to the newly created folder.**\
+**5. 複製遊戲資料夾內所有檔案至步驟1所建立的資料夾中**\
 \
-**6. [Download](#releases) the Town of Us version corresponding to the installed Among Us version.**\
+**6. [下載](#正式版本) Town of us 並找尋對應 Among us 的版本**\
 \
-**7. Locate the downloaded `.zip` file, and move it to the `Town of Us` folder.**\
-Usually, this can be found in the `Downloads` folder.\
+**7. 下載其 `.zip`壓縮檔 並放置在步驟1所建立之資料夾中**\
+通常檔案能在"下載"資料夾中找到\
 \
-**8. Right click on the `.zip` file, and click on `7-Zip`. Then choose `Extract Here`.**\
-Something different might appear depending on the file manager being used. Make sure the folder gets extracted in the `Town of Us` folder, in the same location as the Among Us application. It should look similar to the picture below.\
+**8. 右鍵點擊並解壓縮**\
+不出意外的話應該會如同下圖\
 \
-**9. Launch the Among Us application that's inside, and start playing Town of Us!**\
-A first launch may take up to 5 minutes, so be patient if it doesn't launch immediately.<br/>
+**9. 開啟 Among us 進入遊戲 ，並開始遊玩 Town of us**\
+第一次開啟可能會花上5分鐘時間，若沒有立即開啟，請耐心等待<br/>
 <br/>
 
 ## Installation Guide (Epic Games)
