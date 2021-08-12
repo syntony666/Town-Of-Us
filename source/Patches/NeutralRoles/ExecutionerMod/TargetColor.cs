@@ -1,5 +1,6 @@
 using HarmonyLib;
 using Hazel;
+using TownOfUs.Patches.Language;
 using TownOfUs.Roles;
 using UnityEngine;
 
@@ -14,6 +15,8 @@ namespace TownOfUs.NeutralRoles.ExecutionerMod
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     public class TargetColor
     {
+        private static LanguagePack languagePack = new LanguagePack();
+
         private static void UpdateMeeting(MeetingHud __instance, Executioner role)
         {
             foreach (var player in __instance.playerStates)
@@ -67,7 +70,7 @@ namespace TownOfUs.NeutralRoles.ExecutionerMod
                 var task = new GameObject("JesterTask").AddComponent<ImportantTextTask>();
                 task.transform.SetParent(player.transform, false);
                 task.Text =
-                    $"{jester.ColorString}Role: {jester.Name}\nYour target was killed. Now you get voted out!\nFake Tasks:[]";
+                    $"{jester.ColorString}{languagePack.Role}: {jester.Name}\n{languagePack.ExeToJesText}";
                 player.myTasks.Insert(0, task);
             }
             else

@@ -1,6 +1,7 @@
 using System.Linq;
 using HarmonyLib;
 using TownOfUs.ImpostorRoles.CamouflageMod;
+using TownOfUs.Patches.Language;
 using TownOfUs.Roles;
 using UnityEngine;
 
@@ -9,6 +10,8 @@ namespace TownOfUs.CrewmateRoles.SeerMod
     [HarmonyPatch(typeof(HudManager), nameof(HudManager.Update))]
     public class Update
     {
+        private static LanguagePack languagePack = new LanguagePack();
+
         public static string NameText(PlayerControl player, string str = "", bool meeting = false)
         {
             if (CamouflageUnCamouflage.IsCamoed)
@@ -30,7 +33,7 @@ namespace TownOfUs.CrewmateRoles.SeerMod
                 if (!seerRole.CheckSeeReveal(PlayerControl.LocalPlayer)) continue;
                 var state = __instance.playerStates.FirstOrDefault(x => x.TargetPlayerId == seerRole.Player.PlayerId);
                 state.NameText.color = seerRole.Color;
-                state.NameText.text = NameText(seerRole.Player, " (Seer)", true);
+                state.NameText.text = NameText(seerRole.Player, $" ({languagePack.Seer})", true);
             }
         }
 
@@ -49,14 +52,14 @@ namespace TownOfUs.CrewmateRoles.SeerMod
                             state.NameText.color =
                                 CustomGameOptions.SeerInfo == SeerInfo.Faction ? Color.green : Color.white;
                             state.NameText.text = NameText(player,
-                                CustomGameOptions.SeerInfo == SeerInfo.Role ? " (Crew)" : "", true);
+                                CustomGameOptions.SeerInfo == SeerInfo.Role ? $" ({languagePack.Crewmate})" : "", true);
                             break;
                         case RoleEnum.Impostor:
                             state.NameText.color = CustomGameOptions.SeerInfo == SeerInfo.Faction
                                 ? Color.red
                                 : Palette.ImpostorRed;
                             state.NameText.text = NameText(player,
-                                CustomGameOptions.SeerInfo == SeerInfo.Role ? " (Imp)" : "", true);
+                                CustomGameOptions.SeerInfo == SeerInfo.Role ? $" ({languagePack.Impostor})" : "", true);
                             break;
                         default:
                             var role = Role.GetRole(player);
@@ -85,7 +88,7 @@ namespace TownOfUs.CrewmateRoles.SeerMod
                 if (!seerRole.CheckSeeReveal(PlayerControl.LocalPlayer)) continue;
 
                 seerRole.Player.nameText.color = seerRole.Color;
-                seerRole.Player.nameText.text = NameText(seerRole.Player, " (Seer)");
+                seerRole.Player.nameText.text = NameText(seerRole.Player, $" ({languagePack.Seer})");
             }
 
             if (MeetingHud.Instance != null) UpdateMeeting(MeetingHud.Instance);
@@ -105,14 +108,14 @@ namespace TownOfUs.CrewmateRoles.SeerMod
                         player.nameText.color =
                             CustomGameOptions.SeerInfo == SeerInfo.Faction ? Color.green : Color.white;
                         player.nameText.text = NameText(player,
-                            CustomGameOptions.SeerInfo == SeerInfo.Role ? " (Crew)" : "");
+                            CustomGameOptions.SeerInfo == SeerInfo.Role ? $" ({languagePack.Crewmate})" : "");
                         break;
                     case RoleEnum.Impostor:
                         player.nameText.color = CustomGameOptions.SeerInfo == SeerInfo.Faction
                             ? Color.red
                             : Palette.ImpostorRed;
                         player.nameText.text = NameText(player,
-                            CustomGameOptions.SeerInfo == SeerInfo.Role ? " (Imp)" : "");
+                            CustomGameOptions.SeerInfo == SeerInfo.Role ? $" ({languagePack.Impostor})" : "");
                         break;
                     default:
                         var role = Role.GetRole(player);

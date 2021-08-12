@@ -11,6 +11,7 @@ using UnhollowerBaseLib;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
+using TownOfUs.Patches.Language;
 
 namespace TownOfUs.Roles
 {
@@ -21,6 +22,8 @@ namespace TownOfUs.Roles
         public static bool NobodyWins;
 
         public List<KillButtonManager> ExtraButtons = new List<KillButtonManager>();
+        private static LanguagePack languagePack = new LanguagePack();
+
 
         protected Func<string> ImpostorText;
         protected Func<string> TaskText;
@@ -195,7 +198,7 @@ namespace TownOfUs.Roles
             try
             {
                 var firstText = Player.myTasks.ToArray()[0].Cast<ImportantTextTask>();
-                createTask = !firstText.Text.Contains("Role:");
+                createTask = !firstText.Text.Contains($"{languagePack.Role}:");
             }
             catch (InvalidCastException)
             {
@@ -206,13 +209,13 @@ namespace TownOfUs.Roles
             {
                 var task = new GameObject(Name + "Task").AddComponent<ImportantTextTask>();
                 task.transform.SetParent(Player.transform, false);
-                task.Text = $"{ColorString}Role: {Name}\n{TaskText()}</color>";
+                task.Text = $"{ColorString}{languagePack.Role}: {Name}\n{TaskText()}</color>";
                 Player.myTasks.Insert(0, task);
                 return;
             }
 
             Player.myTasks.ToArray()[0].Cast<ImportantTextTask>().Text =
-                $"{ColorString}Role: {Name}\n{TaskText()}</color>";
+                $"{ColorString}{languagePack.Role}: {Name}\n{TaskText()}</color>";
         }
 
         public static T Gen<T>(Type type, PlayerControl player, CustomRPC rpc)
@@ -371,7 +374,7 @@ namespace TownOfUs.Roles
                 if (role.RoleType == RoleEnum.Shifter && role.Player != PlayerControl.LocalPlayer) return;
                 var task = new GameObject(role.Name + "Task").AddComponent<ImportantTextTask>();
                 task.transform.SetParent(player.transform, false);
-                task.Text = $"{role.ColorString}Role: {role.Name}\n{role.TaskText()}</color>";
+                task.Text = $"{role.ColorString}{languagePack.Role}: {role.Name}\n{role.TaskText()}</color>";
                 player.myTasks.Insert(0, task);
             }
         }

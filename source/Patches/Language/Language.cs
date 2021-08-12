@@ -154,6 +154,7 @@ namespace TownOfUs.Patches.Language
         public string RegCrew => language.RegCrew.Value;
         public string Crewmate => language.Crewmate.Value;
         public string Impostor => language.Impostor.Value;
+        public string Role => language.Role.Value;
 
         public string GiantTaskText => language.GiantTaskText.Value;
         public string ButtonBarryTaskText => language.ButtonBarryTaskText.Value;
@@ -220,6 +221,7 @@ namespace TownOfUs.Patches.Language
         public string UnderdogTaskText => language.UnderdogTaskText.Value;
 
         public string Win => language.Win.Value;
+        public string ExeToJesText => language.ExeToJesText.Value;
     }
 
     interface Language
@@ -356,6 +358,8 @@ namespace TownOfUs.Patches.Language
         Language RegCrew { get; }
         Language Crewmate { get; }
         Language Impostor { get; }
+        Language Role { get; }
+        Language Modifier { get; }
 
         Language GiantTaskText { get; }
         Language ButtonBarryTaskText { get; }
@@ -422,5 +426,7 @@ namespace TownOfUs.Patches.Language
         Language UnderdogTaskText { get; }
 
         Language Win { get; }
+        Language ExeToJesText { get; }
+
     }
 }

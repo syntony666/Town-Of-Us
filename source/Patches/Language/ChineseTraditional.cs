@@ -151,6 +151,7 @@
         public Language RegCrew => new ChineseTraditional("一般船員");
         public Language Crewmate => new ChineseTraditional("船員");
         public Language Impostor => new ChineseTraditional("狼人");
+        public Language Role => new ChineseTraditional("角色");
 
 
         public Language GiantTaskText => new ChineseTraditional("超級慢！");
@@ -189,7 +190,7 @@
         public Language ExecutionerImpostorText => new ChineseTraditional("把 {0} 票出去吧");
 
         public Language ExecutionerTaskTextNull => new ChineseTraditional("奇怪... 由於某些原因 你沒有目標...");
-        public Language ExecutionerTaskText => new ChineseTraditional("把 {0} 票出去吧/n假任務");
+        public Language ExecutionerTaskText => new ChineseTraditional("把 {0} 票出去吧\n假任務");
 
         public Language TheGlitchImpostorText => new ChineseTraditional("你是小故障");
 
@@ -205,7 +206,7 @@
 
         public Language JesterImpostorText => new ChineseTraditional("被票出去");
 
-        public Language JesterTaskText => new ChineseTraditional("被票出去吧!/n假任務:");
+        public Language JesterTaskText => new ChineseTraditional("被票出去吧!\n假任務:");
 
         public Language LoverImpostorText => new ChineseTraditional("你跟 {0}{1}</color> 墮入愛河了");
 
@@ -269,5 +270,7 @@
         public Language UnderdogTaskText => new ChineseTraditional("兩位狼人在場時擊殺冷卻時間較長\n只剩下一位狼人時冷卻時間較短");
 
         public Language Win => new ChineseTraditional("{0} 獲勝");
+
+        public Language ExeToJesText => new ChineseTraditional("你的目標被殺死了. 現在你必須被票出去!\n假任務:[]");
     }
 }
