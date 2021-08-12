@@ -13,7 +13,7 @@
 # 正式版本
 | Among Us - Version| Mod 版本 | 英文版本 | 中文版本                                                     |
 |----------|-------------|-----------------|-----------------|
-| 2021.6.30s & 2021.6.30e & 2021.7.20e | v2.2.1 | [Download](https://github.com/polusgg/Town-Of-Us/releases/download/v2.2.1/TOU_221.zip) | [Download](https://github.com/syntony666/Town-Of-Us/releases/download/v2.2.1/TOU_221_zh_TW.zip) |
+| 2021.6.30s & 2021.6.30e & 2021.7.20e | v2.2.1 | [Download](https://github.com/polusgg/Town-Of-Us/releases/download/v2.2.1/TOU_221.zip) | [Download](https://github.com/syntony666/Town-Of-Us/releases/download/v2.2.1_zh_TW/TOU_221_zh_TW.zip) |
 
 <details>
   <summary> Changelog </summary>
